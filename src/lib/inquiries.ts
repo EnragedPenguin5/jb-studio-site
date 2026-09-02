@@ -1,4 +1,3 @@
-import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { SITE } from "@/lib/site";
 
@@ -24,43 +23,42 @@ export const inquirySchema = z.object({
 
 export type InquiryInput = z.infer<typeof inquirySchema>;
 
-export const submitInquiry = createServerFn({ method: "POST" })
-  .validator((data: unknown) => inquirySchema.parse(data))
-  .handler(async ({ data }) => {
-    if (data.honey) {
-      return { ok: true as const };
-    }
-
-    const body = {
-      _subject: `JB Studio: ${data.shootType} inquiry from ${data.name}`,
-      _template: "table",
-      _replyto: data.email,
-      name: data.name,
-      email: data.email,
-      phone: data.phone || "-",
-      shootType: data.shootType,
-      date: data.date || "-",
-      location: data.location || "-",
-      referralSource: data.referralSource,
-      message: data.message,
-    };
-
-    try {
-      const target = `https://formsubmit.co/ajax/${encodeURIComponent(SITE.email)}`;
-      console.log("[inquiry] posting to", target);
-      const res = await fetch(target, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(body),
-      });
-      const text = await res.text();
-      console.log("[inquiry] formsubmit status", res.status, "body", text.slice(0, 500));
-    } catch (err) {
-      console.error("[inquiry] formsubmit threw", err instanceof Error ? err.message : String(err));
-    }
-
+// Runs in the browser (called from a client event handler), not on the
+// server. formsubmit.co is built for direct browser-side AJAX calls like
+// this one; calling it from a server (e.g. inside a TanStack server
+// function) gets blocked by Cloudflare's bot protection in front of it.
+export async function submitInquiry({ data }: { data: InquiryInput }) {
+  if (data.honey) {
     return { ok: true as const };
+  }
+
+  const body = {
+    _subject: `JB Studio: ${data.shootType} inquiry from ${data.name}`,
+    _template: "table",
+    _replyto: data.email,
+    name: data.name,
+    email: data.email,
+    phone: data.phone || "-",
+    shootType: data.shootType,
+    date: data.date || "-",
+    location: data.location || "-",
+    referralSource: data.referralSource,
+    message: data.message,
+  };
+
+  const target = `https://formsubmit.co/ajax/${encodeURIComponent(SITE.email)}`;
+  const res = await fetch(target, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(body),
   });
+
+  if (!res.ok) {
+    throw new Error(`formsubmit responded ${res.status}`);
+  }
+
+  return { ok: true as const };
+}
