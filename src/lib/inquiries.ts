@@ -46,7 +46,9 @@ export const submitInquiry = createServerFn({ method: "POST" })
     };
 
     try {
-      await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(SITE.email)}`, {
+      const target = `https://formsubmit.co/ajax/${encodeURIComponent(SITE.email)}`;
+      console.log("[inquiry] posting to", target);
+      const res = await fetch(target, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -54,8 +56,10 @@ export const submitInquiry = createServerFn({ method: "POST" })
         },
         body: JSON.stringify(body),
       });
-    } catch {
-      // Form still succeeds; thank-you is the booking UX.
+      const text = await res.text();
+      console.log("[inquiry] formsubmit status", res.status, "body", text.slice(0, 500));
+    } catch (err) {
+      console.error("[inquiry] formsubmit threw", err instanceof Error ? err.message : String(err));
     }
 
     return { ok: true as const };
