@@ -22,7 +22,7 @@ function Home() {
           photo={HERO}
           priority
           sizes="100vw"
-          className="absolute inset-0 size-full object-cover"
+          className="absolute inset-0 size-full object-cover object-[50%_10%]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/50 to-transparent" />
         <div className="relative z-10 flex min-h-svh flex-col justify-end px-5 pb-12 pt-24 md:px-8 md:pb-16">
