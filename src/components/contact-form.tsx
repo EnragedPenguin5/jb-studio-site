@@ -1,7 +1,7 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { inquirySchema, submitInquiry } from "@/lib/inquiries";
-import { BUDGET_RANGES, SHOOT_TYPES, SITE } from "@/lib/site";
+import { REFERRAL_SOURCES, SHOOT_TYPES, SITE } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import {
   FieldError,
@@ -18,7 +18,7 @@ type FormState = {
   shootType: string;
   date: string;
   location: string;
-  budget: string;
+  referralSource: string;
   message: string;
   honey: string;
 };
@@ -30,7 +30,7 @@ const empty: FormState = {
   shootType: "portraits",
   date: "",
   location: "",
-  budget: "not-sure",
+  referralSource: "instagram",
   message: "",
   honey: "",
 };
@@ -197,14 +197,14 @@ export function ContactForm({ initialType }: ContactFormProps) {
             onChange={set("location")}
           />
         </Field>
-        <Field id="budget" label="Budget range" error={errors.budget}>
+        <Field id="referralSource" label="How did you hear about us?" error={errors.referralSource}>
           <NativeSelect
-            id="budget"
-            name="budget"
-            value={values.budget}
-            onChange={set("budget")}
+            id="referralSource"
+            name="referralSource"
+            value={values.referralSource}
+            onChange={set("referralSource")}
           >
-            {BUDGET_RANGES.map((item) => (
+            {REFERRAL_SOURCES.map((item) => (
               <option key={item.value} value={item.value}>
                 {item.label}
               </option>
@@ -218,6 +218,7 @@ export function ContactForm({ initialType }: ContactFormProps) {
           id="message"
           name="message"
           rows={5}
+          required
           value={values.message}
           onChange={set("message")}
         />
