@@ -30,20 +30,20 @@ function About() {
           <div className="mt-8 flex max-w-md flex-col gap-4 text-sm leading-relaxed text-muted">
             <p>
               What I love most is catching a real, happy moment shared
-              between people here in Saskatoon — not a pose, just people
+              between people here in Saskatoon. Not a pose, just people
               actually being together, and me lucky enough to be there
               with a camera.
             </p>
             <p>
               Photos are strange like that: great the day you take them,
-              but give it a year, two years, five, ten — they hit
+              but give it a year, two years, five, ten. They hit
               completely different. That's why I always push prints. Get
               it printed, put it somewhere you'll actually see it. Don't
               let it become just another photo lost in the gallery.
             </p>
             <p>
               On the day, I'm pretty relaxed. I'll direct a little here
-              and there, but nothing to get worried about — mostly I just
+              and there, but nothing to get worried about. Mostly I just
               want you to feel normal so the real moment can happen. I'm
               genuinely grateful every time someone trusts me to capture
               that for them.
