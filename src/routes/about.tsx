@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
   head: () =>
     pageHead(
       `About - ${SITE.name}`,
-      "Johnathon is a photographer based in Saskatoon, Saskatchewan. Portraits, family, and nightlife.",
+      "I'm a photographer based in Saskatoon, Saskatchewan. I really enjoy capturing planned beautiful portraits, as well as candid photos capturing fun moments.",
     ),
   component: About,
 });
