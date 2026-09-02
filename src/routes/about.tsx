@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
   head: () =>
     pageHead(
       `About - ${SITE.name}`,
-      "I'm a photographer based in Saskatoon, Saskatchewan. I really enjoy capturing planned beautiful portraits, as well as candid photos capturing fun moments.",
+      "Johnathon is a photographer based in Saskatoon, Saskatchewan. Portraits, family, and nightlife.",
     ),
   component: About,
 });
@@ -29,17 +29,24 @@ function About() {
           </h1>
           <div className="mt-8 flex max-w-md flex-col gap-4 text-sm leading-relaxed text-muted">
             <p>
-              I photograph portraits, families, and nightlife in {SITE.city}.
-              Couples, groups, maternity. People who live here, shot without
-              the stock-photo polish.
+              What I love most is catching a real, happy moment shared
+              between people here in Saskatoon — not a pose, just people
+              actually being together, and me lucky enough to be there
+              with a camera.
             </p>
             <p>
-              I work in the city and around {SITE.region}. Sessions are
-              directed but not stiff. The job is simple: show up, get the
-              frame, deliver photos you actually want to keep.
+              Photos are strange like that: great the day you take them,
+              but give it a year, two years, five, ten — they hit
+              completely different. That's why I always push prints. Get
+              it printed, put it somewhere you'll actually see it. Don't
+              let it become just another photo lost in the gallery.
             </p>
             <p>
-              If you want to book, tell me the date and the kind of shoot.
+              On the day, I'm pretty relaxed. I'll direct a little here
+              and there, but nothing to get worried about — mostly I just
+              want you to feel normal so the real moment can happen. I'm
+              genuinely grateful every time someone trusts me to capture
+              that for them.
             </p>
           </div>
           <div className="mt-10">
