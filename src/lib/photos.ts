@@ -59,7 +59,7 @@ export const GALLERIES = [
   {
     id: "portraits",
     name: "Portraits",
-    photos: [PHOTOS.PHOTO_03, PHOTOS.PHOTO_02, PHOTOS.PHOTO_04],
+    photos: [PHOTOS.PHOTO_02, PHOTOS.PHOTO_04],
   },
   {
     id: "family",
