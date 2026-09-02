@@ -26,12 +26,11 @@ export const SHOOT_TYPES = [
   { value: "other", label: "Other" },
 ] as const;
 
-export const BUDGET_RANGES = [
-  { value: "not-sure", label: "Not sure yet" },
-  { value: "under-500", label: "Under $500" },
-  { value: "500-1000", label: "$500-$1,000" },
-  { value: "1000-2500", label: "$1,000-$2,500" },
-  { value: "2500-plus", label: "$2,500+" },
+export const REFERRAL_SOURCES = [
+  { value: "instagram", label: "Instagram" },
+  { value: "google", label: "Google" },
+  { value: "referral", label: "Referral" },
+  { value: "other", label: "Other" },
 ] as const;
 
 export const PACKAGES = [
