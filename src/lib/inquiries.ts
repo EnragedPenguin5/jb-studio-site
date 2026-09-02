@@ -3,13 +3,7 @@ import { z } from "zod";
 import { SITE } from "@/lib/site";
 
 const shootType = z.enum(["portraits", "nightlife", "family", "other"]);
-const budget = z.enum([
-  "not-sure",
-  "under-500",
-  "500-1000",
-  "1000-2500",
-  "2500-plus",
-]);
+const referralSource = z.enum(["instagram", "google", "referral", "other"]);
 
 export const inquirySchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(80),
@@ -23,8 +17,8 @@ export const inquirySchema = z.object({
   shootType,
   date: z.string().trim().max(40).optional().default(""),
   location: z.string().trim().max(120).optional().default(""),
-  budget,
-  message: z.string().trim().max(2000).optional().default(""),
+  referralSource,
+  message: z.string().trim().min(1, "Tell me a bit about what you're looking for").max(2000),
   honey: z.string().max(80).optional().default(""),
 });
 
@@ -47,8 +41,8 @@ export const submitInquiry = createServerFn({ method: "POST" })
       shootType: data.shootType,
       date: data.date || "-",
       location: data.location || "-",
-      budget: data.budget,
-      message: data.message || "-",
+      referralSource: data.referralSource,
+      message: data.message,
     };
 
     try {
