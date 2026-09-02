@@ -7,7 +7,7 @@ export const SITE = {
   photographer: "Johnathon",
   city: "Saskatoon",
   region: "Saskatchewan",
-  email: "hello@jbstudio.ca",
+  email: "hello@jbstudiosaskatoon.ca",
   instagramHandle: "@jb_photo.studio",
   instagramUrl: "https://www.instagram.com/jb_photo.studio",
   positioning: "Portraits, family, and nightlife. Photographed in Saskatoon.",
