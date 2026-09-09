@@ -7,6 +7,7 @@ export const SITE = {
   photographer: "Johnathon",
   city: "Saskatoon",
   region: "Saskatchewan",
+  url: "https://www.jbstudiosaskatoon.ca",
   email: "hello@jbstudiosaskatoon.ca",
   instagramHandle: "@jb_photo.studio",
   instagramUrl: "https://www.instagram.com/jb_photo.studio",
@@ -37,7 +38,7 @@ export const PACKAGES = [
   {
     id: "portraits",
     name: "Portraits",
-    startingPrice: "$200",
+    startingPrice: "$200 CAD",
     turnaround: "7-10 business days",
     includes: [
       "Directed session, studio or on location",
@@ -48,7 +49,7 @@ export const PACKAGES = [
   {
     id: "family",
     name: "Family",
-    startingPrice: "$250",
+    startingPrice: "$250 CAD",
     turnaround: "10-14 business days",
     includes: [
       "Groups, couples, or maternity on location",
@@ -59,7 +60,7 @@ export const PACKAGES = [
   {
     id: "nightlife",
     name: "Nightlife",
-    startingPrice: "$275",
+    startingPrice: "$275 CAD",
     turnaround: "Sneak peek in 24-48 hrs, full gallery in 3-5 business days",
     includes: [
       "Coverage of the night: candid and portraits",
@@ -69,11 +70,12 @@ export const PACKAGES = [
   },
 ] as const;
 
-export function pageHead(title: string, description: string) {
+export function pageHead(title: string, description: string, path = "/") {
   return {
     meta: [
       { title },
       { name: "description", content: description },
     ],
+    links: [{ rel: "canonical", href: `${SITE.url}${path}` }],
   };
 }
