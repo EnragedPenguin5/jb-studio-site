@@ -10,6 +10,7 @@ export const Route = createFileRoute("/")({
     pageHead(
       `${SITE.name} - Portraits, family & nightlife photography in Saskatoon`,
       "JB Studio is Johnathon, a photographer in Saskatoon, Saskatchewan. Portraits, family, and nightlife. Book a shoot.",
+      "/",
     ),
   component: Home,
 });
@@ -26,9 +27,9 @@ function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/50 to-transparent" />
         <div className="relative z-10 flex min-h-svh flex-col justify-end px-5 pb-12 pt-24 md:px-8 md:pb-16">
-          <p className="max-w-xl font-display text-3xl leading-tight font-medium tracking-tight text-fg md:text-5xl">
+          <h1 className="max-w-xl font-display text-3xl leading-tight font-medium tracking-tight text-fg md:text-5xl">
             {SITE.positioning}
-          </p>
+          </h1>
           <div className="mt-6">
             <Button asChild size="lg">
               <Link to="/contact">Book a shoot</Link>
