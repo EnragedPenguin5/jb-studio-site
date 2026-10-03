@@ -1,5 +1,6 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
+import { AnalyticsTags } from "@/components/analytics";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -32,20 +33,27 @@ export const Route = createRootRoute({
 const prices = PACKAGES.map((item) => Number(item.startingPrice.replace(/[^0-9]/g, "")));
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
+  "@id": `${SITE.url}/#business`,
   name: SITE.name,
+  alternateName: SITE.brand,
   image: `${SITE.url}/og.jpg`,
+  logo: `${SITE.url}/apple-touch-icon.png`,
   url: SITE.url,
   email: SITE.email,
   description: SITE.positioning,
+  founder: { "@type": "Person", name: SITE.photographer },
   address: {
     "@type": "PostalAddress",
-    addressLocality: SITE.city,
-    addressRegion: "SK",
-    addressCountry: "CA",
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressRegion: SITE.address.region,
+    postalCode: SITE.address.postalCode,
+    addressCountry: SITE.address.country,
   },
-  areaServed: `${SITE.city}, ${SITE.region}`,
+  areaServed: { "@type": "City", name: `${SITE.city}, ${SITE.region}` },
   priceRange: `$${Math.min(...prices)}-$${Math.max(...prices)} CAD`,
+  knowsAbout: ["Portrait photography", "Family photography", "Maternity photography", "Nightlife photography"],
   sameAs: [SITE.instagramUrl],
 };
 
@@ -54,6 +62,7 @@ function RootDocument() {
     <html lang="en" className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <AnalyticsTags />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

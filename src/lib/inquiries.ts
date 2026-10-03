@@ -33,7 +33,7 @@ export async function submitInquiry({ data }: { data: InquiryInput }) {
   }
 
   const body = {
-    _subject: `JB Studio: ${data.shootType} inquiry from ${data.name}`,
+    _subject: `JB Photo Studio: ${data.shootType} inquiry from ${data.name}`,
     _template: "table",
     _replyto: data.email,
     name: data.name,

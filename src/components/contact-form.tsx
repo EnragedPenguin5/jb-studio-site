@@ -1,5 +1,6 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
+import { trackEvent } from "@/components/analytics";
 import { inquirySchema, submitInquiry } from "@/lib/inquiries";
 import { REFERRAL_SOURCES, SHOOT_TYPES, SITE } from "@/lib/site";
 import { Button } from "@/components/ui/button";
@@ -82,6 +83,10 @@ export function ContactForm({ initialType }: ContactFormProps) {
     setStatus("submitting");
     try {
       await submitInquiry({ data: parsed.data });
+      trackEvent("generate_lead", {
+        shoot_type: parsed.data.shootType,
+        referral_source: parsed.data.referralSource,
+      });
       setStatus("sent");
     } catch {
       setStatus("error");

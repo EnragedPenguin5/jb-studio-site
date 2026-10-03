@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
   head: () =>
     pageHead(
       `About - ${SITE.name}`,
-      "Meet Johnathon, the photographer behind JB Studio in Saskatoon — relaxed sessions focused on real, candid moments.",
+      "Meet Johnathon, the photographer behind JB Photo Studio in Saskatoon — relaxed sessions focused on real, candid moments.",
       "/about",
     ),
   component: About,

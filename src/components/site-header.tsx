@@ -32,7 +32,7 @@ export function SiteHeader() {
           className="font-display text-2xl leading-none font-medium tracking-mark text-fg"
           onClick={() => setOpen(false)}
         >
-          {SITE.name}
+          {SITE.brand}
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">

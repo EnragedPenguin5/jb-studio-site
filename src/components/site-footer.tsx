@@ -48,6 +48,12 @@ export function SiteFooter() {
           >
             {SITE.email}
           </a>
+          <Link
+            to="/privacy"
+            className="text-muted transition-[color] duration-[var(--motion-quick)] ease-[var(--ease-out)] hover:text-fg"
+          >
+            Privacy
+          </Link>
         </div>
       </div>
     </footer>

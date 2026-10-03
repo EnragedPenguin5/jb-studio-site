@@ -7,7 +7,7 @@ export const Route = createFileRoute("/work")({
   head: () =>
     pageHead(
       `Work - ${SITE.name}`,
-      "Browse the full JB Studio portfolio: portrait, family, and nightlife photography from real sessions in Saskatoon.",
+      "Browse the full JB Photo Studio portfolio: portrait, family, and nightlife photography from real sessions in Saskatoon.",
       "/work",
     ),
   component: Work,

@@ -3,7 +3,11 @@
  * Tell me the real values and I will swap them here.
  */
 export const SITE = {
-  name: "JB Studio",
+  // Official business name: matches insurance, registration, signage and the
+  // Google Business Profile. Use this everywhere Google might read it.
+  name: "JB Photo Studio",
+  // Short brand mark used in the logo / header wordmark.
+  brand: "JB Studio",
   photographer: "Johnathon",
   city: "Saskatoon",
   region: "Saskatchewan",
@@ -11,7 +15,25 @@ export const SITE = {
   email: "hello@jbstudiosaskatoon.ca",
   instagramHandle: "@jb_photo.studio",
   instagramUrl: "https://www.instagram.com/jb_photo.studio",
+  address: {
+    street: "220 20th Street West, Studio B",
+    city: "Saskatoon",
+    region: "SK",
+    postalCode: "S7M 0W9",
+    country: "CA",
+  },
   positioning: "Portraits, family, and nightlife. Photographed in Saskatoon.",
+} as const;
+
+/**
+ * Tracking IDs (public, safe to commit). Leave a value empty to turn that
+ * tool off.
+ *  - GA4: analytics.google.com -> Admin -> Data streams
+ *  - Clarity: clarity.microsoft.com -> Settings -> Overview -> Project ID
+ */
+export const TRACKING = {
+  ga4MeasurementId: "G-3WLP1334BH",
+  clarityProjectId: "",
 } as const;
 
 export const NAV = [

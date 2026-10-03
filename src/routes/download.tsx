@@ -5,7 +5,7 @@ export const Route = createFileRoute("/download")({
   head: () =>
     pageHead(
       `Download site files - ${SITE.name}`,
-      "Download a zip of the JB Studio site files.",
+      "Download a zip of the JB Photo Studio site files.",
     ),
   component: Download,
 });

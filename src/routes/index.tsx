@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   head: () =>
     pageHead(
       `${SITE.name} - Portraits, family & nightlife photography in Saskatoon`,
-      "JB Studio is Johnathon, a photographer in Saskatoon, Saskatchewan. Portraits, family, and nightlife. Book a shoot.",
+      "JB Photo Studio is Johnathon, a photographer in Saskatoon, Saskatchewan. Portraits, family, and nightlife. Book a shoot.",
       "/",
     ),
   component: Home,

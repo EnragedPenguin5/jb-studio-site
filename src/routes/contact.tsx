@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contact")({
   head: () =>
     pageHead(
       `Book a shoot - ${SITE.name}`,
-      "Request a portrait, family, or nightlife shoot with JB Studio in Saskatoon. Tell me the date and location and I'll reply by email.",
+      "Request a portrait, family, or nightlife shoot with JB Photo Studio in Saskatoon. Tell me the date and location and I'll reply by email.",
       "/contact",
     ),
   component: Contact,

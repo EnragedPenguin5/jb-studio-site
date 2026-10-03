@@ -6,7 +6,7 @@ export const Route = createFileRoute("/services")({
   head: () =>
     pageHead(
       `Services - ${SITE.name}`,
-      "JB Studio pricing: portraits from $200 CAD, family sessions from $250 CAD, nightlife coverage from $275 CAD. Turnaround times and what's included.",
+      "JB Photo Studio pricing: portraits from $200 CAD, family sessions from $250 CAD, nightlife coverage from $275 CAD. Turnaround times and what's included.",
       "/services",
     ),
   component: Services,
