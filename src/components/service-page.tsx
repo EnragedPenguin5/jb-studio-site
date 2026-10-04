@@ -73,6 +73,7 @@ export function ServicePage({ page }: { page: ServicePageContent }) {
             {page.label} session
           </h2>
           <p className="mt-3 text-sm text-fg">Starting at {pkg.startingPrice}</p>
+          <p className="mt-1 text-xs text-muted">Final quote confirmed when we book.</p>
           <p className="mt-1 text-sm text-muted">Turnaround: {pkg.turnaround}</p>
           <ul className="mt-6 flex flex-col gap-2 text-sm leading-relaxed text-muted">
             {pkg.includes.map((line) => (
