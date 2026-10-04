@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Photo } from "@/lib/photos";
 import { cn } from "@/lib/utils";
 
@@ -16,9 +16,17 @@ export function PhotoImage({
   sizes,
 }: PhotoImageProps) {
   const [loaded, setLoaded] = useState(false);
+  const ref = useRef<HTMLImageElement>(null);
+
+  // If the image finished loading before React hydrated, onLoad never fires,
+  // so check on mount and show it right away.
+  useEffect(() => {
+    if (ref.current?.complete && ref.current.naturalWidth > 0) setLoaded(true);
+  }, []);
 
   return (
     <img
+      ref={ref}
       src={photo.src}
       alt={photo.alt}
       width={photo.width}

@@ -54,7 +54,9 @@ export function Lightbox({
       onClick={onClose}
     >
       <div className="flex h-14 shrink-0 items-center justify-between px-3 md:px-5">
-        <p className="text-xs tracking-label text-muted">{photo.id}</p>
+        <p className="text-xs tracking-label text-muted">
+          {index! + 1} / {photos.length}
+        </p>
         <button
           type="button"
           className="flex size-11 items-center justify-center text-fg"

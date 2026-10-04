@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { NAV, SITE } from "@/lib/site";
+import { NAV, SERVICE_LINKS, SITE } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -31,6 +31,20 @@ export function SiteFooter() {
             >
               Book a shoot
             </Link>
+          </nav>
+          <nav
+            className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm"
+            aria-label="Photography services"
+          >
+            {SERVICE_LINKS.map((page) => (
+              <a
+                key={page.href}
+                href={page.href}
+                className="text-muted transition-[color] duration-[var(--motion-quick)] ease-[var(--ease-out)] hover:text-fg"
+              >
+                {page.label} photography
+              </a>
+            ))}
           </nav>
         </div>
         <div className="flex flex-col gap-2 text-sm md:items-end">

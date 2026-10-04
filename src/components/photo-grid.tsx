@@ -32,7 +32,7 @@ export function PhotoGrid({ photos, className, featured = false }: PhotoGridProp
               type="button"
               className="group block w-full p-0 text-left"
               onClick={() => setIndex(photoIndex)}
-              aria-label={`View ${photo.id}`}
+              aria-label={`View larger: ${photo.alt}`}
             >
               <PhotoImage
                 photo={photo}

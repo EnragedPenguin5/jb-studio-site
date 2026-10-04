@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { SERVICE_PAGES } from "@/lib/services";
 import { PACKAGES, pageHead, SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/services")({
@@ -39,12 +40,21 @@ function Services() {
                 <li key={line}>{line}</li>
               ))}
             </ul>
-            <div className="mt-10">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <Button asChild variant="outline">
                 <Link to="/contact" search={{ type: item.id }}>
                   Book this
                 </Link>
               </Button>
+              {SERVICE_PAGES.filter((page) => page.packageId === item.id).map((page) => (
+                <a
+                  key={page.slug}
+                  href={page.slug}
+                  className="text-sm text-muted underline-offset-4 hover:text-fg hover:underline"
+                >
+                  {page.label} details
+                </a>
+              ))}
             </div>
           </article>
         ))}

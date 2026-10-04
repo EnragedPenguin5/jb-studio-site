@@ -12,7 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as DownloadRouteImport } from './routes/download'
+import { Route as FamilyPhotographyRouteImport } from './routes/family-photography'
+import { Route as MaternityPhotographyRouteImport } from './routes/maternity-photography'
+import { Route as NightlifePhotographyRouteImport } from './routes/nightlife-photography'
+import { Route as PortraitPhotographyRouteImport } from './routes/portrait-photography'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as WorkRouteImport } from './routes/work'
@@ -32,9 +35,24 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DownloadRoute = DownloadRouteImport.update({
-  id: '/download',
-  path: '/download',
+const FamilyPhotographyRoute = FamilyPhotographyRouteImport.update({
+  id: '/family-photography',
+  path: '/family-photography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaternityPhotographyRoute = MaternityPhotographyRouteImport.update({
+  id: '/maternity-photography',
+  path: '/maternity-photography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NightlifePhotographyRoute = NightlifePhotographyRouteImport.update({
+  id: '/nightlife-photography',
+  path: '/nightlife-photography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortraitPhotographyRoute = PortraitPhotographyRouteImport.update({
+  id: '/portrait-photography',
+  path: '/portrait-photography',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -57,7 +75,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/download': typeof DownloadRoute
+  '/family-photography': typeof FamilyPhotographyRoute
+  '/maternity-photography': typeof MaternityPhotographyRoute
+  '/nightlife-photography': typeof NightlifePhotographyRoute
+  '/portrait-photography': typeof PortraitPhotographyRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/work': typeof WorkRoute
@@ -66,7 +87,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/download': typeof DownloadRoute
+  '/family-photography': typeof FamilyPhotographyRoute
+  '/maternity-photography': typeof MaternityPhotographyRoute
+  '/nightlife-photography': typeof NightlifePhotographyRoute
+  '/portrait-photography': typeof PortraitPhotographyRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/work': typeof WorkRoute
@@ -76,7 +100,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/download': typeof DownloadRoute
+  '/family-photography': typeof FamilyPhotographyRoute
+  '/maternity-photography': typeof MaternityPhotographyRoute
+  '/nightlife-photography': typeof NightlifePhotographyRoute
+  '/portrait-photography': typeof PortraitPhotographyRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/work': typeof WorkRoute
@@ -87,7 +114,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/download'
+    | '/family-photography'
+    | '/maternity-photography'
+    | '/nightlife-photography'
+    | '/portrait-photography'
     | '/privacy'
     | '/services'
     | '/work'
@@ -96,7 +126,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/download'
+    | '/family-photography'
+    | '/maternity-photography'
+    | '/nightlife-photography'
+    | '/portrait-photography'
     | '/privacy'
     | '/services'
     | '/work'
@@ -105,7 +138,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/download'
+    | '/family-photography'
+    | '/maternity-photography'
+    | '/nightlife-photography'
+    | '/portrait-photography'
     | '/privacy'
     | '/services'
     | '/work'
@@ -115,7 +151,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  DownloadRoute: typeof DownloadRoute
+  FamilyPhotographyRoute: typeof FamilyPhotographyRoute
+  MaternityPhotographyRoute: typeof MaternityPhotographyRoute
+  NightlifePhotographyRoute: typeof NightlifePhotographyRoute
+  PortraitPhotographyRoute: typeof PortraitPhotographyRoute
   PrivacyRoute: typeof PrivacyRoute
   ServicesRoute: typeof ServicesRoute
   WorkRoute: typeof WorkRoute
@@ -144,11 +183,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/download': {
-      id: '/download'
-      path: '/download'
-      fullPath: '/download'
-      preLoaderRoute: typeof DownloadRouteImport
+    '/family-photography': {
+      id: '/family-photography'
+      path: '/family-photography'
+      fullPath: '/family-photography'
+      preLoaderRoute: typeof FamilyPhotographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maternity-photography': {
+      id: '/maternity-photography'
+      path: '/maternity-photography'
+      fullPath: '/maternity-photography'
+      preLoaderRoute: typeof MaternityPhotographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nightlife-photography': {
+      id: '/nightlife-photography'
+      path: '/nightlife-photography'
+      fullPath: '/nightlife-photography'
+      preLoaderRoute: typeof NightlifePhotographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portrait-photography': {
+      id: '/portrait-photography'
+      path: '/portrait-photography'
+      fullPath: '/portrait-photography'
+      preLoaderRoute: typeof PortraitPhotographyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -179,7 +239,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  DownloadRoute: DownloadRoute,
+  FamilyPhotographyRoute: FamilyPhotographyRoute,
+  MaternityPhotographyRoute: MaternityPhotographyRoute,
+  NightlifePhotographyRoute: NightlifePhotographyRoute,
+  PortraitPhotographyRoute: PortraitPhotographyRoute,
   PrivacyRoute: PrivacyRoute,
   ServicesRoute: ServicesRoute,
   WorkRoute: WorkRoute,

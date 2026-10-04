@@ -42,6 +42,14 @@ export const NAV = [
   { to: "/about", label: "About" },
 ] as const;
 
+/** Dedicated service pages (content lives in src/lib/services.ts). */
+export const SERVICE_LINKS = [
+  { href: "/maternity-photography", label: "Maternity" },
+  { href: "/family-photography", label: "Family" },
+  { href: "/portrait-photography", label: "Portrait" },
+  { href: "/nightlife-photography", label: "Nightlife" },
+] as const;
+
 export const SHOOT_TYPES = [
   { value: "portraits", label: "Portraits" },
   { value: "family", label: "Family" },
