@@ -12,7 +12,14 @@ export type PhotoId =
   | "PHOTO_11"
   | "PHOTO_12"
   | "PHOTO_13"
-  | "PHOTO_14";
+  | "PHOTO_14"
+  | "PHOTO_15"
+  | "PHOTO_16"
+  | "PHOTO_17"
+  | "PHOTO_18"
+  | "PHOTO_19"
+  | "PHOTO_20"
+  | "PHOTO_21";
 
 export type Photo = {
   id: PhotoId;
@@ -45,6 +52,13 @@ export const PHOTOS = {
   PHOTO_12: photo("PHOTO_12", "saskatoon-family-photo-kids-baseball", "Two young baseball players at a fence, Saskatoon family photos", 1536, 1920),
   PHOTO_13: photo("PHOTO_13", "saskatoon-portrait-heart-sunglasses", "Woman peering over heart-shaped sunglasses, Saskatoon portrait", 1536, 1920),
   PHOTO_14: photo("PHOTO_14", "saskatoon-nightclub-photographer-smoke-lights", "Man exhaling smoke under purple club lighting in Saskatoon", 1536, 1920),
+  PHOTO_15: photo("PHOTO_15", "saskatoon-outdoor-portrait-man-orange-tee", "Smiling man in a backwards cap and orange tee, outdoor portrait in Saskatoon", 1536, 1920),
+  PHOTO_16: photo("PHOTO_16", "saskatoon-group-portrait-honda-civic", "Group of friends posing with a silver Honda Civic on a tree-lined Saskatoon street", 1536, 1920),
+  PHOTO_17: photo("PHOTO_17", "saskatoon-family-photo-girl-with-dog", "Smiling girl crouched beside a Bernese mountain dog, Saskatoon family photos", 1536, 1920),
+  PHOTO_18: photo("PHOTO_18", "saskatoon-maternity-photo-winter-window", "Expecting mother in a white dress by a window overlooking the river in winter", 1536, 1920),
+  PHOTO_19: photo("PHOTO_19", "saskatoon-maternity-couple-colourful-wall", "Maternity couple embracing in front of a colourful art wall in Saskatoon", 1536, 1920),
+  PHOTO_20: photo("PHOTO_20", "saskatoon-maternity-couple-seated-studio", "Maternity couple seated together in the studio, hands on the bump", 1536, 1920),
+  PHOTO_21: photo("PHOTO_21", "saskatoon-maternity-couple-pink-cloud-set", "Laughing maternity couple on a pink cloud and flower studio set in Saskatoon", 1536, 1920),
 } as const satisfies Record<PhotoId, Photo>;
 
 export const HERO = PHOTOS.PHOTO_06;
@@ -64,6 +78,7 @@ export const GALLERIES = [
     name: "Portraits",
     photos: [
       PHOTOS.PHOTO_02,
+      PHOTOS.PHOTO_15,
       PHOTOS.PHOTO_04,
       PHOTOS.PHOTO_09,
       PHOTOS.PHOTO_10,
@@ -71,12 +86,24 @@ export const GALLERIES = [
     ],
   },
   {
+    id: "maternity",
+    name: "Maternity",
+    photos: [
+      PHOTOS.PHOTO_07,
+      PHOTOS.PHOTO_18,
+      PHOTOS.PHOTO_19,
+      PHOTOS.PHOTO_21,
+      PHOTOS.PHOTO_20,
+      PHOTOS.PHOTO_06,
+    ],
+  },
+  {
     id: "family",
     name: "Family",
     photos: [
       PHOTOS.PHOTO_05,
-      PHOTOS.PHOTO_06,
-      PHOTOS.PHOTO_07,
+      PHOTOS.PHOTO_17,
+      PHOTOS.PHOTO_16,
       PHOTOS.PHOTO_12,
     ],
   },

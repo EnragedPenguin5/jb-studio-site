@@ -7,7 +7,7 @@ export const Route = createFileRoute("/work")({
   head: () =>
     pageHead(
       `Work - ${SITE.name}`,
-      "Browse the full JB Photo Studio portfolio: portrait, family, and nightlife photography from real sessions in Saskatoon.",
+      "Browse the full JB Photo Studio portfolio: portrait, maternity, family, and nightlife photography from real sessions in Saskatoon.",
       "/work",
     ),
   component: Work,
@@ -21,7 +21,7 @@ function Work() {
           Work
         </h1>
         <p className="mt-3 max-w-md text-sm text-muted">
-          Portraits, family, nightlife. Few words. Look at the frames.
+          Portraits, maternity, family, nightlife. Few words. Look at the frames.
         </p>
       </header>
 

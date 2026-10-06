@@ -38,7 +38,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     ],
     packageId: "family",
     bookType: "family",
-    photos: [PHOTOS.PHOTO_06, PHOTOS.PHOTO_07],
+    photos: [PHOTOS.PHOTO_07, PHOTOS.PHOTO_18, PHOTOS.PHOTO_19, PHOTOS.PHOTO_21, PHOTOS.PHOTO_20, PHOTOS.PHOTO_06],
     sections: [
       {
         heading: "Studio or outdoors",
@@ -86,7 +86,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     ],
     packageId: "family",
     bookType: "family",
-    photos: [PHOTOS.PHOTO_05, PHOTOS.PHOTO_12, PHOTOS.PHOTO_04],
+    photos: [PHOTOS.PHOTO_05, PHOTOS.PHOTO_17, PHOTOS.PHOTO_16, PHOTOS.PHOTO_12, PHOTOS.PHOTO_04],
     sections: [
       {
         heading: "Groups, couples and kids",
@@ -133,7 +133,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     ],
     packageId: "portraits",
     bookType: "portraits",
-    photos: [PHOTOS.PHOTO_02, PHOTOS.PHOTO_13, PHOTOS.PHOTO_10, PHOTOS.PHOTO_09],
+    photos: [PHOTOS.PHOTO_02, PHOTOS.PHOTO_15, PHOTOS.PHOTO_13, PHOTOS.PHOTO_10, PHOTOS.PHOTO_09],
     sections: [
       {
         heading: "Studio portraits and headshots",
