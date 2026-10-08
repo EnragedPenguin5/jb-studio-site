@@ -54,6 +54,7 @@ export const SHOOT_TYPES = [
   { value: "portraits", label: "Portraits" },
   { value: "family", label: "Family" },
   { value: "nightlife", label: "Nightlife" },
+  { value: "donation", label: "By donation" },
   { value: "other", label: "Other" },
 ] as const;
 
@@ -68,7 +69,7 @@ export const PACKAGES = [
   {
     id: "portraits",
     name: "Portraits",
-    startingPrice: "$200 CAD",
+    startingPrice: "$200.00",
     turnaround: "7-10 business days",
     includes: [
       "Directed session, studio or on location",
@@ -79,7 +80,7 @@ export const PACKAGES = [
   {
     id: "family",
     name: "Family",
-    startingPrice: "$250 CAD",
+    startingPrice: "$250.00",
     turnaround: "10-14 business days",
     includes: [
       "Groups, couples, or maternity on location",
@@ -90,7 +91,7 @@ export const PACKAGES = [
   {
     id: "nightlife",
     name: "Nightlife",
-    startingPrice: "$275 CAD",
+    startingPrice: "$275.00",
     turnaround: "Sneak peek in 24-48 hrs, full gallery in 3-5 business days",
     includes: [
       "Coverage of the night: candid and portraits",

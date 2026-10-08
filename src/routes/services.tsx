@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services")({
   head: () =>
     pageHead(
       `Services - ${SITE.name}`,
-      "JB Photo Studio pricing: portraits from $200 CAD, family sessions from $250 CAD, nightlife coverage from $275 CAD. Turnaround times and what's included.",
+      "JB Photo Studio pricing: portraits from $200.00, family sessions from $250.00, nightlife coverage from $275.00, plus a few by-donation sessions each month. Turnaround times and what's included.",
       "/services",
     ),
   component: Services,
@@ -21,11 +21,12 @@ function Services() {
           Services
         </h1>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-          Three ways to book. I’ll quote the rest once I know the shoot.
+          Three ways to book, plus a few by-donation spots each month. I’ll
+          quote the rest once I know the shoot.
         </p>
       </header>
 
-      <div className="grid gap-px bg-fg/8 md:grid-cols-3">
+      <div className="grid gap-px bg-fg/8 md:grid-cols-2 xl:grid-cols-4">
         {PACKAGES.map((item) => (
           <article key={item.id} className="flex flex-col bg-bg px-5 py-10 md:px-8">
             <h2 className="font-display text-3xl font-medium tracking-tight">
@@ -58,6 +59,38 @@ function Services() {
             </div>
           </article>
         ))}
+
+        <article
+          id="by-donation"
+          className="flex scroll-mt-24 flex-col bg-surface px-5 py-10 md:px-8"
+        >
+          <p className="text-xs tracking-label text-muted uppercase">Community</p>
+          <h2 className="mt-2 font-display text-3xl font-medium tracking-tight">
+            By donation
+          </h2>
+          <p className="mt-4 text-sm text-fg">Pay what you can</p>
+          <p className="mt-1 text-sm text-muted">Limited spots each month</p>
+          <div className="mt-8 flex flex-col gap-3 text-sm leading-relaxed text-muted">
+            <p>
+              Every month I set aside a few studio hours for people in special
+              circumstances, so photos aren’t out of reach for anyone in our
+              community. You pay by donation: whatever you’re able to, even if
+              that’s very little.
+            </p>
+            <p>
+              Send a request and tell me a bit about your situation and what
+              you’d like photographed. I can only take on a limited number each
+              month, so I can’t promise every request, but I’ll reply to everyone.
+            </p>
+          </div>
+          <div className="mt-10">
+            <Button asChild variant="outline">
+              <Link to="/contact" search={{ type: "donation" }}>
+                Request a spot
+              </Link>
+            </Button>
+          </div>
+        </article>
       </div>
     </main>
   );

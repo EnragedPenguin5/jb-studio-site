@@ -85,6 +85,16 @@ export function ServicePage({ page }: { page: ServicePageContent }) {
               Book a session
             </Link>
           </Button>
+          <p className="mt-5 text-xs leading-relaxed text-muted">
+            Tight budget or going through something?{" "}
+            <a
+              href="/services#by-donation"
+              className="text-fg underline underline-offset-4"
+            >
+              Ask about by-donation sessions
+            </a>
+            .
+          </p>
         </aside>
       </div>
 

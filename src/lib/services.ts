@@ -30,7 +30,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     label: "Maternity",
     title: "Maternity Photographer in Saskatoon | JB Photo Studio",
     description:
-      "Relaxed maternity photography in Saskatoon, in studio or on location. Sessions starting at $250 CAD.",
+      "Relaxed maternity photography in Saskatoon, in studio or on location. Sessions starting at $250.00.",
     h1: "Maternity photographer in Saskatoon",
     intro: [
       "Maternity photos are one of those things you'll be really glad you have. I keep the session calm and easy: a little direction here and there, lots of time to settle in, and no awkward posing marathon.",
@@ -61,7 +61,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       },
       {
         q: "How much does a maternity session cost?",
-        a: "Maternity sessions start at $250 CAD. A typical session includes around 20-25 edited, print-ready photos, and I'll confirm your exact quote when we book, based on location, timing and what you'd like.",
+        a: "Maternity sessions start at $250.00. A typical session includes around 20-25 edited, print-ready photos, and I'll confirm your exact quote when we book, based on location, timing and what you'd like.",
       },
       {
         q: "How long until I get my photos?",
@@ -78,7 +78,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     label: "Family",
     title: "Family Photographer in Saskatoon | JB Photo Studio",
     description:
-      "Natural, relaxed family photos in Saskatoon. On location or in studio, starting at $250 CAD.",
+      "Natural, relaxed family photos in Saskatoon. On location or in studio, starting at $250.00.",
     h1: "Family photographer in Saskatoon",
     intro: [
       "What I love most is catching a real moment between people, not a stiff pose. Family sessions are relaxed: I'll guide you a bit, but mostly I want everyone to feel normal so the good stuff happens on its own.",
@@ -104,7 +104,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     faqs: [
       {
         q: "How much do family photos cost?",
-        a: "Family sessions start at $250 CAD. A typical session includes around 20-25 edited, print-ready photos. Bigger groups or longer sessions get quoted when we book.",
+        a: "Family sessions start at $250.00. A typical session includes around 20-25 edited, print-ready photos. Bigger groups or longer sessions get quoted when we book.",
       },
       {
         q: "Where do family sessions take place?",
@@ -125,7 +125,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     label: "Portrait",
     title: "Portrait & Headshot Photographer in Saskatoon | JB Photo Studio",
     description:
-      "Portrait and headshot photography in Saskatoon, in studio or on location. Sessions starting at $200 CAD.",
+      "Portrait and headshot photography in Saskatoon, in studio or on location. Sessions starting at $200.00.",
     h1: "Portrait photographer in Saskatoon",
     intro: [
       "Portraits for you: personal photos, model and creative work, or a headshot for work, dating or socials. I direct as much or as little as you want.",
@@ -151,7 +151,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     faqs: [
       {
         q: "How much does a portrait session cost?",
-        a: "Portrait sessions start at $200 CAD. A typical session includes around 15-20 edited, print-ready photos, and I'll confirm your quote once I know what you're after.",
+        a: "Portrait sessions start at $200.00. A typical session includes around 15-20 edited, print-ready photos, and I'll confirm your quote once I know what you're after.",
       },
       {
         q: "Do you do headshots?",
@@ -172,7 +172,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     label: "Nightlife",
     title: "Nightlife & Event Photographer in Saskatoon | JB Photo Studio",
     description:
-      "Nightclub, party and event photography in Saskatoon. Coverage starting at $275 CAD, sneak peeks in 24-48 hours.",
+      "Nightclub, party and event photography in Saskatoon. Coverage starting at $275.00, sneak peeks in 24-48 hours.",
     h1: "Nightlife & event photographer in Saskatoon",
     intro: [
       "Club nights, DJ sets, parties and events. I shoot the energy of the room: the crowd, the performers, and the candid moments in between.",
@@ -192,7 +192,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     faqs: [
       {
         q: "How much does nightlife or event coverage cost?",
-        a: "Nightlife coverage starts at $275 CAD, usually with around 50-70 edited photos of the night. Final pricing depends on the event length and venue, and I'll quote it when we book.",
+        a: "Nightlife coverage starts at $275.00, usually with around 50-70 edited photos of the night. Final pricing depends on the event length and venue, and I'll quote it when we book.",
       },
       {
         q: "How fast do we get photos?",

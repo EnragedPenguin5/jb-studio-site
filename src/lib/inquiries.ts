@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { SITE } from "@/lib/site";
 
-const shootType = z.enum(["portraits", "nightlife", "family", "other"]);
+const shootType = z.enum(["portraits", "nightlife", "family", "donation", "other"]);
 const referralSource = z.enum(["instagram", "google", "referral", "other"]);
 
 export const inquirySchema = z.object({

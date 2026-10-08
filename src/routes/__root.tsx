@@ -30,7 +30,7 @@ export const Route = createRootRoute({
 
 // LocalBusiness structured data so Google can connect this site to local
 // search / Google Business Profile results for "photographer Saskatoon".
-const prices = PACKAGES.map((item) => Number(item.startingPrice.replace(/[^0-9]/g, "")));
+const prices = PACKAGES.map((item) => Number(item.startingPrice.replace(/[^0-9.]/g, "")));
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -52,7 +52,7 @@ const localBusinessSchema = {
     addressCountry: SITE.address.country,
   },
   areaServed: { "@type": "City", name: `${SITE.city}, ${SITE.region}` },
-  priceRange: `$${Math.min(...prices)}-$${Math.max(...prices)} CAD`,
+  priceRange: `$${Math.min(...prices).toFixed(2)}-$${Math.max(...prices).toFixed(2)}`,
   knowsAbout: ["Portrait photography", "Family photography", "Maternity photography", "Nightlife photography"],
   sameAs: [SITE.instagramUrl],
 };
