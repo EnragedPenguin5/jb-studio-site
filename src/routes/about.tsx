@@ -20,6 +20,7 @@ function About() {
       <div className="grid md:grid-cols-2">
         <PhotoImage
           photo={ABOUT_PHOTO}
+          priority
           sizes="(max-width: 768px) 100vw, 50vw"
           className="aspect-portrait w-full object-cover md:aspect-auto md:h-full md:min-h-svh"
         />
