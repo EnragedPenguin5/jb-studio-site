@@ -19,7 +19,8 @@ export type PhotoId =
   | "PHOTO_18"
   | "PHOTO_19"
   | "PHOTO_20"
-  | "PHOTO_21";
+  | "PHOTO_21"
+  | "ABOUT";
 
 export type Photo = {
   id: PhotoId;
@@ -59,7 +60,7 @@ export const PHOTOS = {
   PHOTO_19: photo("PHOTO_19", "saskatoon-maternity-couple-colourful-wall", "Maternity couple embracing in front of a colourful art wall in Saskatoon", 1536, 1920),
   PHOTO_20: photo("PHOTO_20", "saskatoon-maternity-couple-seated-studio", "Maternity couple seated together in the studio, hands on the bump", 1536, 1920),
   PHOTO_21: photo("PHOTO_21", "saskatoon-maternity-couple-pink-cloud-set", "Laughing maternity couple on a pink cloud and flower studio set in Saskatoon", 1536, 1920),
-} as const satisfies Record<PhotoId, Photo>;
+} as const satisfies Record<Exclude<PhotoId, "ABOUT">, Photo>;
 
 export const HERO = PHOTOS.PHOTO_06;
 
@@ -119,4 +120,10 @@ export const GALLERIES = [
   },
 ] as const;
 
-export const ABOUT_PHOTO = PHOTOS.PHOTO_03;
+export const ABOUT_PHOTO = photo(
+  "ABOUT",
+  "johnathon-saskatoon-photographer-headshot",
+  "Johnathon, the photographer behind JB Photo Studio in Saskatoon",
+  1600,
+  1600,
+);
