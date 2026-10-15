@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services")({
   head: () =>
     pageHead(
       `Services - ${SITE.name}`,
-      "JB Photo Studio pricing: portraits from $200.00, family sessions from $250.00, nightlife coverage from $275.00, plus a few by-donation sessions each month. Turnaround times and what's included.",
+      "JB Photo Studio pricing: portraits from $200.00, family sessions from $250.00, nightlife coverage from $275.00, plus by-donation sessions and hosted studio time in Riversdale, Saskatoon.",
       "/services",
     ),
   component: Services,
@@ -21,8 +21,9 @@ function Services() {
           Services
         </h1>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-          Three ways to book, plus a few by-donation spots each month. I’ll
-          quote the rest once I know the shoot.
+          Every session is photographed by me, in my studio in Riversdale or on
+          location around Saskatoon. Starting prices are below, and I’ll confirm
+          your exact quote once I know the shoot.
         </p>
       </header>
 
@@ -92,6 +93,41 @@ function Services() {
           </div>
         </article>
       </div>
+
+      <section
+        id="studio-time"
+        className="grid scroll-mt-24 gap-8 border-t border-fg/8 px-5 py-12 md:grid-cols-2 md:gap-16 md:px-8 md:py-16"
+      >
+        <div>
+          <p className="text-xs tracking-label text-muted uppercase">For creators</p>
+          <h2 className="mt-2 font-display text-3xl font-medium tracking-tight">
+            Hosted studio time
+          </h2>
+          <p className="mt-4 text-sm text-fg">Hourly, rates on request</p>
+          <p className="mt-1 text-sm text-muted">I’m on site for every booking</p>
+        </div>
+        <div className="flex flex-col gap-3 text-sm leading-relaxed text-muted">
+          <p>
+            Photographers, videographers and creators can book Studio B by the
+            hour. I’ll be there to open up, help get the lights and backdrops
+            where you want them, and keep the day running smoothly so you can
+            focus on your shoot.
+          </p>
+          <p>
+            The studio has seamless paper, a black velvet backdrop, softboxes,
+            a snoot with gobos and gels, and RGB tube lighting. If you’d rather
+            have me behind the camera, any of the sessions above can happen in
+            the studio too.
+          </p>
+          <div className="mt-6">
+            <Button asChild variant="outline">
+              <Link to="/contact" search={{ type: "studio" }}>
+                Ask about studio time
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

@@ -20,6 +20,10 @@ export type PhotoId =
   | "PHOTO_19"
   | "PHOTO_20"
   | "PHOTO_21"
+  | "PHOTO_22"
+  | "PHOTO_23"
+  | "PHOTO_24"
+  | "PHOTO_25"
   | "ABOUT";
 
 export type Photo = {
@@ -60,6 +64,10 @@ export const PHOTOS = {
   PHOTO_19: photo("PHOTO_19", "saskatoon-maternity-couple-colourful-wall", "Maternity couple embracing in front of a colourful art wall in Saskatoon", 1536, 1920),
   PHOTO_20: photo("PHOTO_20", "saskatoon-maternity-couple-seated-studio", "Maternity couple seated together in the studio, hands on the bump", 1536, 1920),
   PHOTO_21: photo("PHOTO_21", "saskatoon-maternity-couple-pink-cloud-set", "Laughing maternity couple on a pink cloud and flower studio set in Saskatoon", 1536, 1920),
+  PHOTO_22: photo("PHOTO_22", "saskatoon-studio-portrait-cyan-gobo-red-sunglasses", "Studio portrait of a man in red round sunglasses, lit in cyan with striped gobo shadows, Saskatoon", 1536, 1920),
+  PHOTO_23: photo("PHOTO_23", "saskatoon-creative-studio-portrait-dot-gobo", "Creative studio portrait with a dotted gobo light pattern on a black backdrop in Saskatoon", 1920, 1440),
+  PHOTO_24: photo("PHOTO_24", "saskatoon-studio-portrait-leather-jacket-lattice-gobo", "Man in a vintage leather flight jacket lit through a lattice gobo, Saskatoon studio portrait", 1600, 1600),
+  PHOTO_25: photo("PHOTO_25", "saskatoon-headshot-photographer-studio-grey-backdrop", "Studio headshot of a smiling man with glasses on a grey backdrop, Saskatoon headshot photographer", 1536, 1920),
 } as const satisfies Record<Exclude<PhotoId, "ABOUT">, Photo>;
 
 export const HERO = PHOTOS.PHOTO_06;
@@ -68,7 +76,7 @@ export const FEATURED: Photo[] = [
   PHOTOS.PHOTO_02,
   PHOTOS.PHOTO_05,
   PHOTOS.PHOTO_08,
-  PHOTOS.PHOTO_03,
+  PHOTOS.PHOTO_22,
   PHOTOS.PHOTO_07,
   PHOTOS.PHOTO_04,
 ];
@@ -78,12 +86,17 @@ export const GALLERIES = [
     id: "portraits",
     name: "Portraits",
     photos: [
+      PHOTOS.PHOTO_22,
       PHOTOS.PHOTO_02,
+      PHOTOS.PHOTO_25,
+      PHOTOS.PHOTO_23,
       PHOTOS.PHOTO_15,
+      PHOTOS.PHOTO_24,
       PHOTOS.PHOTO_04,
       PHOTOS.PHOTO_09,
       PHOTOS.PHOTO_10,
       PHOTOS.PHOTO_13,
+      PHOTOS.PHOTO_03,
     ],
   },
   {

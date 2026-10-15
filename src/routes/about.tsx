@@ -44,6 +44,13 @@ function About() {
               let it become just another photo lost in the gallery.
             </p>
             <p>
+              Most sessions happen at my studio, Studio B at The Two Twenty
+              in Riversdale. It's a small, comfortable space that's set up
+              and ready when you arrive, and I'm there for every booking. The
+              person who says hi at the door is the same one behind the
+              camera.
+            </p>
+            <p>
               On the day, I'm pretty relaxed. I'll direct a little here
               and there, but nothing to get worried about. Mostly I just
               want you to feel normal so the real moment can happen. I'm

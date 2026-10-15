@@ -133,7 +133,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     ],
     packageId: "portraits",
     bookType: "portraits",
-    photos: [PHOTOS.PHOTO_02, PHOTOS.PHOTO_15, PHOTOS.PHOTO_13, PHOTOS.PHOTO_10, PHOTOS.PHOTO_09],
+    photos: [PHOTOS.PHOTO_22, PHOTOS.PHOTO_25, PHOTOS.PHOTO_02, PHOTOS.PHOTO_23, PHOTOS.PHOTO_24, PHOTOS.PHOTO_15, PHOTOS.PHOTO_13, PHOTOS.PHOTO_10, PHOTOS.PHOTO_09],
     sections: [
       {
         heading: "Studio portraits and headshots",

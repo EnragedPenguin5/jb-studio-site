@@ -22,7 +22,9 @@ export const SITE = {
     postalCode: "S7M 0W9",
     country: "CA",
   },
-  positioning: "Portraits, family, and nightlife. Photographed in Saskatoon.",
+  positioning: "Portraits, family, and nightlife. Photographed in my Riversdale studio or anywhere around Saskatoon.",
+  // One-line promise under the homepage headline.
+  promise: "You bring yourself. I take care of the lighting, the direction and the editing.",
 } as const;
 
 /**
@@ -55,6 +57,7 @@ export const SHOOT_TYPES = [
   { value: "family", label: "Family" },
   { value: "nightlife", label: "Nightlife" },
   { value: "donation", label: "By donation" },
+  { value: "studio", label: "Hosted studio time" },
   { value: "other", label: "Other" },
 ] as const;
 
