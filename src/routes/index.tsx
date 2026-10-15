@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PhotoGrid } from "@/components/photo-grid";
+import { PhotoCarousel } from "@/components/photo-carousel";
 import { PhotoImage } from "@/components/photo-image";
 import { Button } from "@/components/ui/button";
 import { FEATURED, HERO } from "@/lib/photos";
@@ -56,9 +56,9 @@ function Home() {
         </div>
       </section>
 
-      <section className="px-1 py-1 md:px-1.5 md:py-1.5">
+      <section className="pt-12 md:pt-16">
         <h2 className="sr-only">Selected work</h2>
-        <PhotoGrid photos={FEATURED} featured />
+        <PhotoCarousel photos={FEATURED} />
       </section>
 
       <div className="flex justify-center px-5 pt-12 md:pt-16">
