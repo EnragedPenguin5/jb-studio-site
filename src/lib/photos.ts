@@ -72,13 +72,17 @@ export const PHOTOS = {
 
 export const HERO = PHOTOS.PHOTO_06;
 
+// Homepage carousel: one of each kind of work, alternating so no two
+// neighbours look alike. The first photo sits in front on page load.
 export const FEATURED: Photo[] = [
-  PHOTOS.PHOTO_02,
-  PHOTOS.PHOTO_05,
-  PHOTOS.PHOTO_08,
-  PHOTOS.PHOTO_22,
-  PHOTOS.PHOTO_07,
-  PHOTOS.PHOTO_04,
+  PHOTOS.PHOTO_02, // portrait
+  PHOTOS.PHOTO_05, // family
+  PHOTOS.PHOTO_22, // creative studio portrait
+  PHOTOS.PHOTO_07, // maternity, studio
+  PHOTOS.PHOTO_08, // nightlife
+  PHOTOS.PHOTO_25, // headshot
+  PHOTOS.PHOTO_17, // family, kids and pets
+  PHOTOS.PHOTO_19, // maternity, outdoors
 ];
 
 export const GALLERIES = [
