@@ -14,8 +14,8 @@ export const SITE = {
   region: "Saskatchewan",
   url: "https://www.jbstudiosaskatoon.ca",
   email: "hello@jbstudiosaskatoon.ca",
-  instagramHandle: "@jb_photo.studio",
-  instagramUrl: "https://www.instagram.com/jb_photo.studio",
+  instagramHandle: "@jet.black.studio",
+  instagramUrl: "https://www.instagram.com/jet.black.studio",
   address: {
     street: "220 20th Street West, Studio B",
     city: "Saskatoon",
