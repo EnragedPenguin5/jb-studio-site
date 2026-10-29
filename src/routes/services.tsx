@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services")({
   head: () =>
     pageHead(
       `Services - ${SITE.name}`,
-      "JB Photo Studio pricing: portraits from $200.00, family sessions from $250.00, nightlife coverage from $275.00, plus by-donation sessions and hosted studio time in Riversdale, Saskatoon.",
+      "Jet Black Studio pricing: portraits from $200.00, family sessions from $250.00, nightlife coverage from $275.00, plus by-donation sessions and hosted studio time in Riversdale, Saskatoon.",
       "/services",
     ),
   component: Services,

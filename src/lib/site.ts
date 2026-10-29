@@ -5,9 +5,10 @@
 export const SITE = {
   // Official business name: matches insurance, registration, signage and the
   // Google Business Profile. Use this everywhere Google might read it.
-  name: "JB Photo Studio",
-  // Short brand mark used in the logo / header wordmark.
-  brand: "JB Studio",
+  name: "Jet Black Studio",
+  // Brand wordmark used in the header. Registered name (SK Corporate Registry,
+  // business no. 102246788): keep it matching `name`.
+  brand: "Jet Black Studio",
   photographer: "Johnathon",
   city: "Saskatoon",
   region: "Saskatchewan",

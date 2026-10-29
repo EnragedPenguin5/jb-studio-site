@@ -28,7 +28,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
   {
     slug: "/maternity-photography",
     label: "Maternity",
-    title: "Maternity Photographer in Saskatoon | JB Photo Studio",
+    title: "Maternity Photographer in Saskatoon | Jet Black Studio",
     description:
       "Relaxed maternity photography in Saskatoon, in studio or on location. Sessions starting at $250.00.",
     h1: "Maternity photographer in Saskatoon",
@@ -76,7 +76,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
   {
     slug: "/family-photography",
     label: "Family",
-    title: "Family Photographer in Saskatoon | JB Photo Studio",
+    title: "Family Photographer in Saskatoon | Jet Black Studio",
     description:
       "Natural, relaxed family photos in Saskatoon. On location or in studio, starting at $250.00.",
     h1: "Family photographer in Saskatoon",
@@ -123,7 +123,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
   {
     slug: "/portrait-photography",
     label: "Portrait",
-    title: "Portrait & Headshot Photographer in Saskatoon | JB Photo Studio",
+    title: "Portrait & Headshot Photographer in Saskatoon | Jet Black Studio",
     description:
       "Portrait and headshot photography in Saskatoon, in studio or on location. Sessions starting at $200.00.",
     h1: "Portrait photographer in Saskatoon",
@@ -170,7 +170,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
   {
     slug: "/nightlife-photography",
     label: "Nightlife",
-    title: "Nightlife & Event Photographer in Saskatoon | JB Photo Studio",
+    title: "Nightlife & Event Photographer in Saskatoon | Jet Black Studio",
     description:
       "Nightclub, party and event photography in Saskatoon. Coverage starting at $275.00, sneak peeks in 24-48 hours.",
     h1: "Nightlife & event photographer in Saskatoon",

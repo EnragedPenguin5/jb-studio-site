@@ -36,7 +36,6 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   "@id": `${SITE.url}/#business`,
   name: SITE.name,
-  alternateName: SITE.brand,
   image: `${SITE.url}/og.jpg`,
   logo: `${SITE.url}/apple-touch-icon.png`,
   url: SITE.url,

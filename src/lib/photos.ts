@@ -140,7 +140,7 @@ export const GALLERIES = [
 export const ABOUT_PHOTO = photo(
   "ABOUT",
   "johnathon-saskatoon-photographer-headshot",
-  "Johnathon, the photographer behind JB Photo Studio in Saskatoon",
+  "Johnathon, the photographer behind Jet Black Studio in Saskatoon",
   1600,
   1600,
 );

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   head: () =>
     pageHead(
       `${SITE.name} - Portraits, family & nightlife photography in Saskatoon`,
-      "JB Photo Studio is Johnathon, a portrait photographer with a studio in Riversdale, Saskatoon. Portraits, headshots, family, maternity and nightlife. Book a shoot.",
+      "Jet Black Studio is Johnathon, a portrait photographer with a studio in Riversdale, Saskatoon. Portraits, headshots, family, maternity and nightlife. Book a shoot.",
       "/",
     ),
   component: Home,

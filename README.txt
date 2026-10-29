@@ -1,4 +1,4 @@
-JB Studio
+Jet Black Studio
 Photographer site for Johnathon, Saskatoon.
 
 WHAT IS IN HERE
