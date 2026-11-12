@@ -1,6 +1,6 @@
 import { trackEvent } from "@/components/analytics";
 import { Button } from "@/components/ui/button";
-import { PROMOS } from "@/lib/site";
+import { PROMOS, SHOW_PROMO_POSTER } from "@/lib/site";
 
 export function PromoSection() {
   if (PROMOS.length === 0) return null;
@@ -17,7 +17,7 @@ export function PromoSection() {
             key={promo.id}
             className="flex flex-col gap-8 md:flex-row md:items-center md:gap-16"
           >
-            {promo.poster ? (
+            {promo.poster && SHOW_PROMO_POSTER ? (
               <a
                 href={promo.bookingUrl}
                 target="_blank"
@@ -38,10 +38,8 @@ export function PromoSection() {
               </a>
             ) : null}
             <div className="max-w-xl">
-              <p className="text-xs tracking-label text-muted uppercase">
-                {promo.label} · Studio B
-              </p>
-              <h2 className="mt-3 font-display text-3xl font-medium tracking-tight md:text-4xl">
+              <p className="text-sm text-muted">{promo.label}</p>
+              <h2 className="mt-3 font-display text-5xl md:text-6xl">
                 {promo.title}
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted md:text-base">

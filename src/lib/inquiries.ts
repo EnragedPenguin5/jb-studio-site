@@ -17,7 +17,7 @@ export const inquirySchema = z.object({
   date: z.string().trim().max(40).optional().default(""),
   location: z.string().trim().max(120).optional().default(""),
   referralSource,
-  message: z.string().trim().min(1, "Tell me a bit about what you're looking for").max(2000),
+  message: z.string().trim().min(1, "Tell us a bit about what you're looking for").max(2000),
   honey: z.string().max(80).optional().default(""),
 });
 

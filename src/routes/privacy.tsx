@@ -17,13 +17,10 @@ function Privacy() {
   return (
     <main className="pt-16">
       <div className="mx-auto max-w-2xl px-5 pt-10 pb-24 md:px-8 md:pt-14">
-        <p className="text-xs tracking-label text-muted uppercase">Legal</p>
-        <h1 className="font-display mt-3 text-4xl font-medium tracking-tight md:text-5xl">
-          Privacy policy
-        </h1>
+        <h1 className="font-display text-5xl md:text-7xl">Privacy policy.</h1>
         <p className="mt-3 text-sm text-muted">Last updated {UPDATED}</p>
 
-        <div className="mt-10 flex flex-col gap-8 text-sm leading-relaxed text-muted [&_h2]:font-display [&_h2]:text-xl [&_h2]:font-medium [&_h2]:text-fg">
+        <div className="mt-10 flex flex-col gap-8 text-base leading-relaxed text-muted [&_h2]:font-display [&_h2]:text-3xl [&_h2]:font-medium [&_h2]:text-fg">
           <section className="flex flex-col gap-3">
             <h2>Who we are</h2>
             <p>

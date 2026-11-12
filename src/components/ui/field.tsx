@@ -7,8 +7,9 @@ import type {
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// Underlined fields: no boxes, just a line that brightens when you're in it.
 export const fieldClass =
-  "h-11 w-full rounded-sm bg-surface px-3.5 text-sm text-fg shadow-[var(--shadow-border)] outline-none transition-[box-shadow] duration-[var(--motion-quick)] ease-[var(--ease-out)] placeholder:text-subtle focus-visible:shadow-[var(--shadow-border-hover)] focus-visible:ring-2 focus-visible:ring-ring/40";
+  "h-12 w-full rounded-none border-b border-fg/25 bg-transparent px-0 text-base text-fg outline-none transition-[border-color,box-shadow] duration-[var(--motion-quick)] ease-[var(--ease-out)] placeholder:text-subtle hover:border-fg/50 focus-visible:border-fg focus-visible:shadow-[0_1px_0_0_var(--color-fg)]";
 
 export function Label({
   className,
@@ -16,7 +17,7 @@ export function Label({
 }: LabelHTMLAttributes<HTMLLabelElement>) {
   return (
     <label
-      className={cn("text-xs font-medium tracking-wide text-muted", className)}
+      className={cn("text-sm text-muted", className)}
       {...props}
     />
   );
@@ -59,7 +60,7 @@ export function NativeSelect({
         {children}
       </select>
       <ChevronDown
-        className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-muted"
+        className="pointer-events-none absolute top-1/2 right-0 size-4 -translate-y-1/2 text-muted"
         strokeWidth={1.5}
         aria-hidden="true"
       />
@@ -69,5 +70,5 @@ export function NativeSelect({
 
 export function FieldError({ children }: { children?: string }) {
   if (!children) return null;
-  return <p className="text-xs text-muted">{children}</p>;
+  return <p className="text-sm text-red">{children}</p>;
 }

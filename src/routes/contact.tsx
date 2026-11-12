@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contact")({
   head: () =>
     pageHead(
       `Book a shoot - ${SITE.name}`,
-      "Request a portrait, family, or nightlife shoot with Jet Black Studio in Saskatoon. Tell me the date and location and I'll reply by email.",
+      "Request a portrait, family, or nightlife shoot with Jet Black Studio in Saskatoon. Tell us the date and location and we'll reply by email.",
       "/contact",
     ),
   component: Contact,
@@ -23,26 +23,24 @@ function Contact() {
   const { type } = Route.useSearch();
 
   return (
-    <main className="pt-16">
-      <div className="mx-auto grid max-w-5xl gap-12 px-5 pt-10 pb-16 md:grid-cols-2 md:gap-16 md:px-8 md:pt-14 md:pb-24">
-        <header>
-          <h1 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
-            Book a shoot
-          </h1>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-            Tell me the kind of shoot, a date, and where. I’ll reply by email.
+    <main className="moonlit pt-16">
+      <div className="grid gap-12 px-5 pt-10 pb-20 md:grid-cols-12 md:gap-10 md:px-8 md:pt-16 md:pb-28">
+        <header className="md:col-span-5">
+          <h1 className="font-display text-6xl md:text-8xl">Book a shoot.</h1>
+          <p className="mt-6 max-w-sm text-base leading-relaxed text-muted">
+            Tell us the kind of shoot, a date, and where. We’ll reply by email with ideas and
+            a quote.
           </p>
-          <p className="mt-8 text-sm text-muted">
+          <p className="mt-6 text-base text-muted">
             Or write directly:{" "}
-            <a
-              className="text-fg underline-offset-4 hover:underline"
-              href={`mailto:${SITE.email}`}
-            >
+            <a className="text-fg underline underline-offset-4" href={`mailto:${SITE.email}`}>
               {SITE.email}
             </a>
           </p>
         </header>
-        <ContactForm initialType={type} />
+        <div className="md:col-span-6 md:col-start-7">
+          <ContactForm initialType={type} />
+        </div>
       </div>
     </main>
   );

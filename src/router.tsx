@@ -8,5 +8,7 @@ export function getRouter() {
     routeTree,
     defaultErrorComponent: AppErrorComponent,
     defaultNotFoundComponent: NotFound,
+    // Cross-fade between pages where the browser supports it.
+    defaultViewTransition: true,
   });
 }

@@ -6,10 +6,18 @@ export function SiteFooter() {
     <footer className="mt-auto border-t border-fg/8">
       <div className="flex flex-col gap-8 px-5 py-10 md:flex-row md:items-end md:justify-between md:px-8">
         <div>
-          <p className="font-display text-xl font-medium tracking-mark">
-            {SITE.name}
-          </p>
-          <p className="mt-2 text-sm text-muted">
+          <img
+            src="/jb-studio-logo.png"
+            alt=""
+            width={288}
+            height={288}
+            loading="lazy"
+            className="-ml-2 size-20"
+          />
+          <p className="mt-2 font-serif text-xl italic">{SITE.name}</p>
+          <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted">
+            {SITE.address.street}
+            <br />
             {SITE.city}, {SITE.region}
           </p>
           <nav
@@ -25,6 +33,13 @@ export function SiteFooter() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              to="/"
+              hash="find-us"
+              className="text-muted transition-[color] duration-[var(--motion-quick)] ease-[var(--ease-out)] hover:text-fg"
+            >
+              Find the studio
+            </Link>
             <Link
               to="/contact"
               className="text-muted transition-[color] duration-[var(--motion-quick)] ease-[var(--ease-out)] hover:text-fg"

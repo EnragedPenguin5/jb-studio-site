@@ -25,14 +25,24 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-fg/8 bg-bg/85 backdrop-blur-md">
+    <header className="site-header fixed inset-x-0 top-0 z-50 border-b border-fg/8 bg-bg/85 backdrop-blur-md">
       <div className="flex h-16 items-center justify-between gap-3 px-4 md:px-8">
         <Link
           to="/"
-          className="font-display text-2xl leading-none font-medium tracking-mark text-fg"
+          className="flex items-center gap-2.5 text-fg"
+          aria-label={`${SITE.brand} home`}
           onClick={() => setOpen(false)}
         >
-          {SITE.brand}
+          <img
+            src="/jb-studio-logo.png"
+            alt=""
+            width={288}
+            height={288}
+            className="size-12"
+          />
+          <span className="hidden font-serif text-xl leading-none italic sm:inline">
+            {SITE.brand}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
@@ -88,20 +98,28 @@ export function SiteHeader() {
           open ? "block" : "hidden",
         )}
       >
-        <nav className="flex flex-col px-4 py-4" aria-label="Mobile">
+        <nav className="flex flex-col px-4 py-4 font-display text-4xl" aria-label="Mobile">
           {NAV.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="flex min-h-12 items-center text-base text-fg"
+              className="flex min-h-14 items-center text-fg"
               onClick={() => setOpen(false)}
             >
               {item.label}
             </Link>
           ))}
           <Link
+            to="/"
+            hash="find-us"
+            className="flex min-h-14 items-center text-fg"
+            onClick={() => setOpen(false)}
+          >
+            Find the studio
+          </Link>
+          <Link
             to="/contact"
-            className="flex min-h-12 items-center text-base text-fg"
+            className="flex min-h-14 items-center text-fg"
             onClick={() => setOpen(false)}
           >
             Contact

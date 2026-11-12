@@ -1,20 +1,30 @@
 @import "@fontsource-variable/outfit/wght.css";
-@import "@fontsource/cormorant-garamond/latin-500.css";
-@import "@fontsource/cormorant-garamond/latin-600.css";
+@import "@fontsource-variable/caveat/wght.css";
+@import "@fontsource/cormorant-garamond/latin-500-italic.css";
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Outfit Variable", "Segoe UI", system-ui, sans-serif;
+  /* The logo's italic serif, used big. Headings are set like the JB mark. */
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
+  /* Grease-pencil notes on the contact sheets. */
+  --font-hand: "Caveat Variable", "Segoe Print", cursive;
 
   --color-bg: #080808;
   --color-surface: #111111;
   --color-fg: #f3f1ec;
   --color-muted: #9a9892;
   --color-subtle: #6e6c67;
+  /* Grease-pencil red, pulled from the red lenses in the hero portrait.
+     5.9:1 against the background, in both directions. */
+  --color-red: #ff4a36;
+  /* Moonlight: the cool blue of the gobo light in the same portrait. Used
+     as light (glows, hover), never as body text. */
+  --color-moon: #a9cdf0;
   --color-accent: #f3f1ec;
   --color-accent-fg: #080808;
-  --color-accent-hover: #ddd8ce;
+  --color-accent-hover: #a9cdf0;
   --color-border: color-mix(in oklab, #f3f1ec 12%, transparent);
   --color-ring: #f3f1ec;
 
@@ -76,7 +86,134 @@
   }
 }
 
+/* Headings echo the logo: italic serif, tight. Unlayered on purpose so it
+   wins over the weight/leading utilities already in the markup. */
+.font-display {
+  font-style: italic;
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+}
+
+/* Moonlight: a soft cool glow, as if a light were on just out of frame. */
+.moonlit {
+  background-image: radial-gradient(
+    60rem 34rem at 85% 0%,
+    color-mix(in oklab, var(--color-moon) 11%, transparent),
+    transparent 70%
+  );
+}
+
+/* Film grain. One static tile, no animation, never intercepts taps. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.35'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hero: the photo opens like a snoot being uncapped. Starts as a pinpoint
+   (not zero) so the image still paints on the first frame. */
+.iris {
+  clip-path: circle(7% at 50% 40%);
+  animation: iris-open 1.5s var(--ease-smooth-out) 0.2s forwards;
+}
+@keyframes iris-open {
+  to {
+    clip-path: circle(150% at 50% 40%);
+  }
+}
+
+/* Flash pop: a burst of white when you hover, focus or press a photo. */
+.flash {
+  position: relative;
+}
+.flash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+}
+.flash:active::after,
+.flash:focus-visible::after {
+  animation: flash-pop 420ms var(--ease-out);
+}
+@media (hover: hover) {
+  .flash:hover::after {
+    animation: flash-pop 420ms var(--ease-out);
+  }
+}
+@keyframes flash-pop {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Grease-pencil circle: draws itself once when it scrolls into view. */
+/* Dash lengths are in screen pixels because the stroke is non-scaling. */
+.grease path {
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+}
+.grease[data-drawn="true"] path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1600ms var(--ease-out) 150ms;
+}
+
+/* Page changes cross-fade; the header holds still while the page changes. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 380ms;
+  animation-timing-function: var(--ease-smooth-out);
+}
+.site-header {
+  view-transition-name: site-header;
+}
+
+/* Lightbox eases in instead of snapping. */
+.lightbox-in {
+  animation: lightbox-in 260ms var(--ease-out);
+}
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-fg);
+  outline-offset: 3px;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .iris {
+    clip-path: none;
+    animation: none;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+  .flash::after {
+    animation: none !important;
+  }
+  .grease path {
+    stroke-dashoffset: 0;
+  }
+
   *,
   *::before,
   *::after {

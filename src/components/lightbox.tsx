@@ -50,7 +50,7 @@ export function Lightbox({
       role="dialog"
       aria-modal="true"
       aria-label={photo.alt}
-      className="fixed inset-0 z-overlay flex flex-col bg-bg"
+      className="lightbox-in fixed inset-0 z-overlay flex flex-col bg-bg"
       onClick={onClose}
     >
       <div className="flex h-14 shrink-0 items-center justify-between px-3 md:px-5">

@@ -24,6 +24,24 @@ export type PhotoId =
   | "PHOTO_23"
   | "PHOTO_24"
   | "PHOTO_25"
+  | "PHOTO_26"
+  | "PHOTO_27"
+  | "PHOTO_28"
+  | "PHOTO_29"
+  | "PHOTO_30"
+  | "PHOTO_31"
+  | "PHOTO_32"
+  | "PHOTO_33"
+  | "PHOTO_34"
+  | "PHOTO_35"
+  | "PHOTO_36"
+  | "PHOTO_37"
+  | "PHOTO_38"
+  | "PHOTO_39"
+  | "PHOTO_40"
+  | "PHOTO_41"
+  | "PHOTO_42"
+  | "PHOTO_43"
   | "ABOUT";
 
 export type Photo = {
@@ -68,21 +86,44 @@ export const PHOTOS = {
   PHOTO_23: photo("PHOTO_23", "saskatoon-creative-studio-portrait-dot-gobo", "Creative studio portrait with a dotted gobo light pattern on a black backdrop in Saskatoon", 1920, 1440),
   PHOTO_24: photo("PHOTO_24", "saskatoon-studio-portrait-leather-jacket-lattice-gobo", "Man in a vintage leather flight jacket lit through a lattice gobo, Saskatoon studio portrait", 1600, 1600),
   PHOTO_25: photo("PHOTO_25", "saskatoon-headshot-photographer-studio-grey-backdrop", "Studio headshot of a smiling man with glasses on a grey backdrop, Saskatoon headshot photographer", 1536, 1920),
+  PHOTO_26: photo("PHOTO_26", "jet-black-studio-beauty-portrait-woman-long-hair", "Studio beauty portrait of a woman with long wavy hair in a black top on a grey backdrop", 1536, 1920),
+  PHOTO_27: photo("PHOTO_27", "paris-sainte-chapelle-stained-glass", "Looking up at towering stained glass windows and a gilded vaulted ceiling in a Paris chapel", 1536, 1920),
+  PHOTO_28: photo("PHOTO_28", "paris-seine-houseboats-overcast", "Houseboats moored along a cobbled quay on the Seine in Paris under an overcast sky", 1536, 1920),
+  PHOTO_29: photo("PHOTO_29", "paris-portrait-man-tracksuit-window", "Man in a black tracksuit and white sneakers leaning in a stone window alcove above a winter garden in Paris", 1536, 1920),
+  PHOTO_30: photo("PHOTO_30", "paris-monument-two-visitors-window", "Two visitors standing before an ornate tomb beneath a tall leaded window in Paris", 1536, 1920),
+  PHOTO_31: photo("PHOTO_31", "paris-street-woman-red-scarf", "Woman in a long black coat and red scarf walking away down a wet cobbled Paris street", 1536, 1920),
+  PHOTO_32: photo("PHOTO_32", "paris-two-classic-porsche-911s", "Two classic dark Porsche 911s parked on cobblestones in a Paris square", 1536, 1920),
+  PHOTO_33: photo("PHOTO_33", "paris-gilded-altar-baroque-dome", "Gilded baroque altar with twisted marble columns beneath a painted dome in Paris", 1536, 1920),
+  PHOTO_34: photo("PHOTO_34", "jet-black-studio-21st-birthday-spotlight-portrait", "Woman lying in a spotlight beside a birthday cake with candles, black 21 balloons above her, studio birthday portrait", 1536, 1920),
+  PHOTO_35: photo("PHOTO_35", "jet-black-studio-portrait-man-suede-jacket-motion", "Studio portrait of a man mid-stride in a suede jacket and plaid shirt on a grey backdrop", 1536, 1920),
+  PHOTO_36: photo("PHOTO_36", "jet-black-studio-portrait-man-sunglasses-varsity-jacket", "Portrait of a man in dark sunglasses and a leather varsity jacket in a poster-covered shop", 1536, 1920),
+  PHOTO_37: photo("PHOTO_37", "jet-black-studio-bridal-portrait-park", "Bride in an off-the-shoulder gown and long veil holding a bouquet in a sunlit park", 1536, 1920),
+  PHOTO_38: photo("PHOTO_38", "jet-black-studio-portrait-woman-grey-backdrop", "Studio portrait of a woman in a sleeveless grey top with one hand in her hair on a grey backdrop", 1536, 1920),
+  PHOTO_39: photo("PHOTO_39", "jet-black-studio-creative-portrait-red-light-posters", "Creative studio portrait of a woman lying among scattered posters, lit in deep red", 1536, 1920),
+  PHOTO_40: photo("PHOTO_40", "jet-black-studio-closeup-portrait-woman-pearls", "Close-up portrait of a woman lying back with a finger resting on her lips, wearing pearls", 1536, 1920),
+  PHOTO_41: photo("PHOTO_41", "jet-black-studio-editorial-lighter-red-car", "Hand with long white nails and a fur cuff holding a lit lighter in front of a red sports car", 1536, 1920),
+  PHOTO_42: photo("PHOTO_42", "jet-black-studio-fashion-editorial-fur-coat-parkade", "Fashion editorial of a model in a fur coat, tie and plaid trousers sitting beside red sports cars in a parkade", 1536, 1920),
+  PHOTO_43: photo("PHOTO_43", "jet-black-studio-fashion-editorial-red-porsche", "Fashion editorial of a model seated on the ground in front of a red Porsche in an underground parkade", 1536, 1920),
 } as const satisfies Record<Exclude<PhotoId, "ABOUT">, Photo>;
 
-export const HERO = PHOTOS.PHOTO_06;
+// The fashion editorial leads: it sets the tone for everything else.
+export const HERO = PHOTOS.PHOTO_42;
 
-// Homepage carousel: one of each kind of work, alternating so no two
-// neighbours look alike. The first photo sits in front on page load.
+// Homepage "any style" strip: clean, colour, concept.
+export const RANGE: Photo[] = [PHOTOS.PHOTO_26, PHOTOS.PHOTO_39, PHOTOS.PHOTO_34];
+
+// Homepage carousel: a mix of everything, alternating so no two neighbours
+// look alike. The first photo sits in front on page load.
 export const FEATURED: Photo[] = [
-  PHOTOS.PHOTO_02, // portrait
-  PHOTOS.PHOTO_05, // family
-  PHOTOS.PHOTO_22, // creative studio portrait
-  PHOTOS.PHOTO_07, // maternity, studio
-  PHOTOS.PHOTO_08, // nightlife
-  PHOTOS.PHOTO_25, // headshot
-  PHOTOS.PHOTO_17, // family, kids and pets
-  PHOTOS.PHOTO_19, // maternity, outdoors
+  PHOTOS.PHOTO_35,
+  PHOTOS.PHOTO_43,
+  PHOTOS.PHOTO_38,
+  PHOTOS.PHOTO_07,
+  PHOTOS.PHOTO_36,
+  PHOTOS.PHOTO_22,
+  PHOTOS.PHOTO_17,
+  PHOTOS.PHOTO_29,
+  PHOTOS.PHOTO_08,
 ];
 
 export const GALLERIES = [
@@ -90,17 +131,35 @@ export const GALLERIES = [
     id: "portraits",
     name: "Portraits",
     photos: [
+      PHOTOS.PHOTO_26,
+      PHOTOS.PHOTO_38,
+      PHOTOS.PHOTO_35,
       PHOTOS.PHOTO_22,
+      PHOTOS.PHOTO_40,
+      PHOTOS.PHOTO_34,
+      PHOTOS.PHOTO_37,
+      PHOTOS.PHOTO_36,
       PHOTOS.PHOTO_02,
       PHOTOS.PHOTO_25,
       PHOTOS.PHOTO_23,
-      PHOTOS.PHOTO_15,
       PHOTOS.PHOTO_24,
+      PHOTOS.PHOTO_15,
       PHOTOS.PHOTO_04,
       PHOTOS.PHOTO_09,
       PHOTOS.PHOTO_10,
       PHOTOS.PHOTO_13,
       PHOTOS.PHOTO_03,
+    ],
+  },
+  {
+    id: "editorial",
+    name: "Editorial",
+    photos: [
+      PHOTOS.PHOTO_42,
+      PHOTOS.PHOTO_43,
+      PHOTOS.PHOTO_41,
+      PHOTOS.PHOTO_39,
+      PHOTOS.PHOTO_29,
     ],
   },
   {
@@ -135,12 +194,24 @@ export const GALLERIES = [
       PHOTOS.PHOTO_14,
     ],
   },
+  {
+    id: "elsewhere",
+    name: "Elsewhere",
+    photos: [
+      PHOTOS.PHOTO_32,
+      PHOTOS.PHOTO_27,
+      PHOTOS.PHOTO_31,
+      PHOTOS.PHOTO_30,
+      PHOTOS.PHOTO_28,
+      PHOTOS.PHOTO_33,
+    ],
+  },
 ] as const;
 
 export const ABOUT_PHOTO = photo(
   "ABOUT",
   "johnathon-saskatoon-photographer-headshot",
-  "Johnathon, the photographer behind Jet Black Studio in Saskatoon",
+  "Johnathon, photographer at Jet Black Studio in Saskatoon",
   1600,
   1600,
 );

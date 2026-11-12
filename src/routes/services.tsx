@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { PhotoImage } from "@/components/photo-image";
 import { Button } from "@/components/ui/button";
+import { PHOTOS, type Photo } from "@/lib/photos";
 import { SERVICE_PAGES } from "@/lib/services";
 import { PACKAGES, pageHead, SITE } from "@/lib/site";
 
@@ -13,75 +15,84 @@ export const Route = createFileRoute("/services")({
   component: Services,
 });
 
+/** The photo shown beside each package. */
+const PACKAGE_PHOTO: Record<(typeof PACKAGES)[number]["id"], Photo> = {
+  portraits: PHOTOS.PHOTO_38,
+  family: PHOTOS.PHOTO_05,
+  nightlife: PHOTOS.PHOTO_08,
+};
+
+const quietLink =
+  "text-sm text-muted underline underline-offset-4 transition-[color] duration-[var(--motion-quick)] ease-[var(--ease-out)] hover:text-fg";
+
 function Services() {
   return (
     <main className="pt-16">
-      <header className="px-5 pt-10 pb-10 md:px-8 md:pt-14">
-        <h1 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
-          Services
-        </h1>
-        <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-          Every session is photographed by me, in my studio in Riversdale or on
-          location around Saskatoon. Starting prices are below, and I’ll confirm
-          your exact quote once I know the shoot.
+      <header className="px-5 pt-10 pb-12 md:px-8 md:pt-16 md:pb-20">
+        <h1 className="font-display text-6xl md:text-8xl">Services.</h1>
+        <p className="mt-6 max-w-md text-base leading-relaxed text-muted">
+          Every session is photographed by us, in our studio in Riversdale or on location
+          around Saskatoon. Starting prices are below, and we’ll confirm your exact quote once
+          we know the shoot.
         </p>
       </header>
 
-      <div className="grid gap-px bg-fg/8 md:grid-cols-2 xl:grid-cols-4">
-        {PACKAGES.map((item) => (
-          <article key={item.id} className="flex flex-col bg-bg px-5 py-10 md:px-8">
-            <h2 className="font-display text-3xl font-medium tracking-tight">
-              {item.name}
-            </h2>
-            <p className="mt-4 text-sm text-fg">Starting at {item.startingPrice}</p>
-            <p className="mt-1 text-sm text-muted">
-              Typical turnaround {item.turnaround}
-            </p>
-            <ul className="mt-8 flex flex-col gap-3 text-sm leading-relaxed text-muted">
+      {PACKAGES.map((item, i) => (
+        <article
+          key={item.id}
+          className="grid border-t border-fg/8 md:grid-cols-2 md:items-center"
+        >
+          <PhotoImage
+            photo={PACKAGE_PHOTO[item.id]}
+            priority={i === 0}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className={`aspect-portrait w-full object-cover outline-0 md:aspect-auto md:h-[80svh] md:object-[50%_18%] ${i % 2 === 1 ? "md:order-2" : ""}`}
+          />
+          <div className="px-5 py-12 md:px-16 md:py-16">
+            <h2 className="font-display text-5xl md:text-7xl">{item.name}</h2>
+            <p className="mt-5 text-lg text-fg">Starting at {item.startingPrice}</p>
+            <p className="mt-1 text-base text-muted">Typical turnaround {item.turnaround}</p>
+            <ul className="mt-8 max-w-md border-t border-fg/15 text-base text-fg/85">
               {item.includes.map((line) => (
-                <li key={line}>{line}</li>
+                <li key={line} className="border-b border-fg/15 py-3">
+                  {line}
+                </li>
               ))}
             </ul>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Button asChild variant="outline">
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <Button asChild>
                 <Link to="/contact" search={{ type: item.id }}>
                   Book this
                 </Link>
               </Button>
               {SERVICE_PAGES.filter((page) => page.packageId === item.id).map((page) => (
-                <a
-                  key={page.slug}
-                  href={page.slug}
-                  className="text-sm text-muted underline-offset-4 hover:text-fg hover:underline"
-                >
+                <a key={page.slug} href={page.slug} className={quietLink}>
                   {page.label} details
                 </a>
               ))}
             </div>
-          </article>
-        ))}
+          </div>
+        </article>
+      ))}
 
+      <section className="grid border-t border-fg/8 md:grid-cols-2">
         <article
           id="by-donation"
-          className="flex scroll-mt-24 flex-col bg-surface px-5 py-10 md:px-8"
+          className="scroll-mt-24 border-b border-fg/8 bg-surface px-5 py-14 md:border-r md:border-b-0 md:px-16 md:py-20"
         >
-          <p className="text-xs tracking-label text-muted uppercase">Community</p>
-          <h2 className="mt-2 font-display text-3xl font-medium tracking-tight">
-            By donation
-          </h2>
-          <p className="mt-4 text-sm text-fg">Pay what you can</p>
-          <p className="mt-1 text-sm text-muted">Limited spots each month</p>
-          <div className="mt-8 flex flex-col gap-3 text-sm leading-relaxed text-muted">
+          <h2 className="font-display text-4xl md:text-5xl">By donation.</h2>
+          <p className="mt-4 text-lg text-fg">Pay what you can</p>
+          <p className="mt-1 text-base text-muted">Limited spots each month</p>
+          <div className="mt-8 flex max-w-md flex-col gap-4 text-base leading-relaxed text-muted">
             <p>
-              Every month I set aside a few studio hours for people in special
-              circumstances, so photos aren’t out of reach for anyone in our
-              community. You pay by donation: whatever you’re able to, even if
-              that’s very little.
+              Every month we set aside a few studio hours for people in special circumstances,
+              so photos aren’t out of reach for anyone in our community. You pay by donation:
+              whatever you’re able to, even if that’s very little.
             </p>
             <p>
-              Send a request and tell me a bit about your situation and what
-              you’d like photographed. I can only take on a limited number each
-              month, so I can’t promise every request, but I’ll reply to everyone.
+              Send a request and tell us a bit about your situation and what you’d like
+              photographed. We can only take on a limited number each month, so we can’t
+              promise every request, but we’ll reply to everyone.
             </p>
           </div>
           <div className="mt-10">
@@ -92,41 +103,31 @@ function Services() {
             </Button>
           </div>
         </article>
-      </div>
 
-      <section
-        id="studio-time"
-        className="grid scroll-mt-24 gap-8 border-t border-fg/8 px-5 py-12 md:grid-cols-2 md:gap-16 md:px-8 md:py-16"
-      >
-        <div>
-          <p className="text-xs tracking-label text-muted uppercase">For creators</p>
-          <h2 className="mt-2 font-display text-3xl font-medium tracking-tight">
-            Hosted studio time
-          </h2>
-          <p className="mt-4 text-sm text-fg">Hourly, rates on request</p>
-          <p className="mt-1 text-sm text-muted">I’m on site for every booking</p>
-        </div>
-        <div className="flex flex-col gap-3 text-sm leading-relaxed text-muted">
-          <p>
-            Photographers, videographers and creators can book Studio B by the
-            hour. I’ll be there to open up, help get the lights and backdrops
-            where you want them, and keep the day running smoothly so you can
-            focus on your shoot.
-          </p>
-          <p>
-            The studio has seamless paper, a black velvet backdrop, softboxes,
-            a snoot with gobos and gels, and RGB tube lighting. If you’d rather
-            have me behind the camera, any of the sessions above can happen in
-            the studio too.
-          </p>
-          <div className="mt-6">
+        <article id="studio-time" className="scroll-mt-24 px-5 py-14 md:px-16 md:py-20">
+          <h2 className="font-display text-4xl md:text-5xl">Hosted studio time.</h2>
+          <p className="mt-4 text-lg text-fg">Hourly, rates on request</p>
+          <p className="mt-1 text-base text-muted">We’re on site for every booking</p>
+          <div className="mt-8 flex max-w-md flex-col gap-4 text-base leading-relaxed text-muted">
+            <p>
+              Photographers, videographers and creators can book Studio B by the hour. We’ll
+              be there to open up, help get the lights and backdrops where you want them, and
+              keep the day running smoothly so you can focus on your shoot.
+            </p>
+            <p>
+              The studio has seamless paper, a black velvet backdrop, softboxes, a snoot with
+              gobos and gels, and RGB tube lighting. If you’d rather have us behind the
+              camera, any of the sessions above can happen in the studio too.
+            </p>
+          </div>
+          <div className="mt-10">
             <Button asChild variant="outline">
               <Link to="/contact" search={{ type: "studio" }}>
                 Ask about studio time
               </Link>
             </Button>
           </div>
-        </div>
+        </article>
       </section>
     </main>
   );

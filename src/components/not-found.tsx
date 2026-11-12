@@ -1,18 +1,21 @@
 import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 
 export function NotFound() {
   return (
-    <main className="flex min-h-svh flex-col items-center justify-center gap-5 px-6 text-center">
-      <p className="text-xs tracking-label text-muted uppercase">404</p>
-      <h1 className="font-display text-4xl font-medium tracking-tight">
-        Page not found
-      </h1>
-      <Link
-        to="/"
-        className="inline-flex h-11 items-center bg-accent px-5 text-sm font-medium text-accent-fg transition-[background-color,transform] duration-[var(--motion-quick)] ease-[var(--ease-out)] hover:bg-accent-hover active:scale-[0.96]"
-      >
-        Back home
-      </Link>
+    <main className="flex min-h-svh flex-col items-start justify-center gap-5 px-5 md:px-8">
+      <h1 className="font-display text-7xl md:text-9xl">Nothing here.</h1>
+      <p className="max-w-sm text-base leading-relaxed text-muted">
+        That page doesn't exist (error 404). The good stuff is this way.
+      </p>
+      <div className="flex flex-wrap gap-3">
+        <Button asChild>
+          <Link to="/">Back home</Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link to="/work">See the work</Link>
+        </Button>
+      </div>
     </main>
   );
 }

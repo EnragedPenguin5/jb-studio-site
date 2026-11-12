@@ -95,13 +95,10 @@ export function ContactForm({ initialType }: ContactFormProps) {
 
   if (status === "sent") {
     return (
-      <div className="border border-fg/10 bg-surface px-6 py-10 md:px-8 md:py-12">
-        <p className="text-xs tracking-label text-muted uppercase">Sent</p>
-        <h2 className="font-display mt-3 text-3xl font-medium tracking-tight">
-          Request received.
-        </h2>
-        <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
-          I’ll reply by email. If you need to add anything, write{" "}
+      <div className="border-t border-fg/15 pt-10">
+        <h2 className="font-display text-5xl md:text-6xl">Request received.</h2>
+        <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
+          We’ll reply by email. If you need to add anything, write{" "}
           <a className="text-fg underline-offset-4 hover:underline" href={`mailto:${SITE.email}`}>
             {SITE.email}
           </a>
@@ -115,7 +112,7 @@ export function ContactForm({ initialType }: ContactFormProps) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="relative flex flex-col gap-5" noValidate>
+    <form onSubmit={onSubmit} className="relative flex flex-col gap-7" noValidate>
       <div className="sr-only" aria-hidden="true">
         <label>
           Website
@@ -139,7 +136,7 @@ export function ContactForm({ initialType }: ContactFormProps) {
         />
       </Field>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-7 md:grid-cols-2">
         <Field id="email" label="Email" error={errors.email}>
           <Input
             id="email"
@@ -165,7 +162,7 @@ export function ContactForm({ initialType }: ContactFormProps) {
         </Field>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-7 md:grid-cols-2">
         <Field id="shootType" label="Shoot type" error={errors.shootType}>
           <NativeSelect
             id="shootType"
@@ -192,7 +189,7 @@ export function ContactForm({ initialType }: ContactFormProps) {
         </Field>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-7 md:grid-cols-2">
         <Field id="location" label="Location" error={errors.location}>
           <Input
             id="location"
@@ -231,7 +228,7 @@ export function ContactForm({ initialType }: ContactFormProps) {
 
       {status === "error" ? (
         <p className="text-sm text-muted">
-          Couldn’t send the form. Email me directly at{" "}
+          Couldn’t send the form. Email us directly at{" "}
           <a className="text-fg underline-offset-4 hover:underline" href={`mailto:${SITE.email}`}>
             {SITE.email}
           </a>
@@ -239,7 +236,7 @@ export function ContactForm({ initialType }: ContactFormProps) {
         </p>
       ) : null}
 
-      <Button type="submit" size="lg" disabled={status === "submitting"}>
+      <Button type="submit" size="lg" className="mt-2 self-start" disabled={status === "submitting"}>
         {status === "submitting" ? "Sending…" : "Send request"}
       </Button>
     </form>

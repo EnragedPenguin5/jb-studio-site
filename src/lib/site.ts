@@ -23,9 +23,9 @@ export const SITE = {
     postalCode: "S7M 0W9",
     country: "CA",
   },
-  positioning: "Portraits, family, and nightlife. Photographed in my Riversdale studio or anywhere around Saskatoon.",
+  positioning: "Portraits, family, and nightlife. Photographed in our Riversdale studio or anywhere around Saskatoon.",
   // One-line promise under the homepage headline.
-  promise: "You bring yourself. I take care of the lighting, the direction and the editing.",
+  promise: "You bring yourself. We take care of the lighting, the direction and the editing.",
 } as const;
 
 /**
@@ -37,6 +37,56 @@ export const SITE = {
 export const TRACKING = {
   ga4MeasurementId: "G-3WLP1334BH",
   clarityProjectId: "",
+} as const;
+
+/**
+ * Show the promo's poster image on the homepage. Off by default: the poster
+ * is made for print and Instagram, and the promo reads cleaner as text here.
+ */
+export const SHOW_PROMO_POSTER = false;
+
+/** Homepage headline and the line under it. */
+export const HERO_COPY = {
+  headline: "Something a little different.",
+  sub: "Portraits, headshots, family, maternity and nightlife in Saskatoon. Any style you can picture, lit and finished properly.",
+} as const;
+
+/** The "any style" statement on the homepage. */
+export const RANGE_COPY = {
+  heading: "Whatever you can picture.",
+  body: [
+    "We're for people who want something a little different from the usual holiday-card photo. Hard light, colour, shadow, a little fog. Or clean, bright and classic. We do that too, and we do it properly.",
+    "We aren't mainstream. The quality is undeniable. The only limits are the size of the room and our imaginations, yours included.",
+  ],
+} as const;
+
+/** Practical "where is it" block near the bottom of the homepage. */
+export const FIND_US = {
+  heading: "Finding the studio",
+  body: "Studio B is on the lower level of The Two Twenty in Riversdale. The building keeps its doors locked, so we'll meet you at the front entrance at your booking time and walk you in.",
+  lost: "Running late or not sure you're in the right spot? Message us.",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=The+Two+Twenty%2C+220+20th+Street+West%2C+Saskatoon%2C+SK",
+} as const;
+
+/** What the studio is set up with. Used in the About page. */
+export const STUDIO_KIT = [
+  "black velvet",
+  "seamless paper backdrops",
+  "a snoot with gobos for shadow patterns",
+  "RGB tube lights",
+  "a fog machine",
+] as const;
+
+/** Jolie Bête: the free creative project series. */
+export const JOLIE_BETE = {
+  name: "Jolie Bête",
+  meaning: "French for pretty beast.",
+  body: [
+    "Jolie Bête is the name for the free creative projects we shoot in the studio. No client, no brief, nobody to keep happy. Just an idea we can't stop thinking about, and someone willing to step into the light for it.",
+    "Paid sessions keep the lights on. This is what the lights are for.",
+  ],
+  cta: "Want to be in one? Tell us your idea",
 } as const;
 
 export const NAV = [

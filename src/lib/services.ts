@@ -22,7 +22,7 @@ export type ServicePageContent = {
 };
 
 const STUDIO =
-  "my studio (Studio B at The Two Twenty, 220 20th Street West in Riversdale)";
+  "our studio (Studio B at The Two Twenty, 220 20th Street West in Riversdale)";
 
 export const SERVICE_PAGES: ServicePageContent[] = [
   {
@@ -33,7 +33,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       "Relaxed maternity photography in Saskatoon, in studio or on location. Sessions starting at $250.00.",
     h1: "Maternity photographer in Saskatoon",
     intro: [
-      "Maternity photos are one of those things you'll be really glad you have. I keep the session calm and easy: a little direction here and there, lots of time to settle in, and no awkward posing marathon.",
+      "Maternity photos are one of those things you'll be really glad you have. We keep the session calm and easy: a little direction here and there, lots of time to settle in, and no awkward posing marathon.",
       `Sessions happen at ${STUDIO} or on location anywhere around Saskatoon.`,
     ],
     packageId: "family",
@@ -44,13 +44,13 @@ export const SERVICE_PAGES: ServicePageContent[] = [
         heading: "Studio or outdoors",
         body: [
           "The studio gives you a clean, controlled look that works in any weather or season, which matters in Saskatchewan. Outdoor sessions work great from late spring into fall, especially around golden hour.",
-          "Partners, kids and pets are welcome in the frame. Just let me know who's coming when you book.",
+          "Partners, kids and pets are welcome in the frame. Just let us know who's coming when you book.",
         ],
       },
       {
         heading: "What to wear",
         body: [
-          "Pick something you feel good in. Fitted dresses and simple solid colours photograph well, and it's easy to bring a second outfit for a change partway through. If you're unsure, send me what you're thinking and I'll help you choose.",
+          "Pick something you feel good in. Fitted dresses and simple solid colours photograph well, and it's easy to bring a second outfit for a change partway through. If you're unsure, send us what you're thinking and we'll help you choose.",
         ],
       },
     ],
@@ -61,7 +61,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       },
       {
         q: "How much does a maternity session cost?",
-        a: "Maternity sessions start at $250.00. A typical session includes around 20-25 edited, print-ready photos, and I'll confirm your exact quote when we book, based on location, timing and what you'd like.",
+        a: "Maternity sessions start at $250.00. A typical session includes around 20-25 edited, print-ready photos, and we'll confirm your exact quote when we book, based on location, timing and what you'd like.",
       },
       {
         q: "How long until I get my photos?",
@@ -81,7 +81,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       "Natural, relaxed family photos in Saskatoon. On location or in studio, starting at $250.00.",
     h1: "Family photographer in Saskatoon",
     intro: [
-      "What I love most is catching a real moment between people, not a stiff pose. Family sessions are relaxed: I'll guide you a bit, but mostly I want everyone to feel normal so the good stuff happens on its own.",
+      "What we love most is catching a real moment between people, not a stiff pose. Family sessions are relaxed: we'll guide you a bit, but mostly we want everyone to feel normal so the good stuff happens on its own.",
       `We can shoot on location somewhere that means something to you, at one of Saskatoon's parks or river spots, or at ${STUDIO}.`,
     ],
     packageId: "family",
@@ -97,7 +97,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       {
         heading: "Get them printed",
         body: [
-          "Photos hit differently a year, five years, ten years later. Every gallery comes with print-ready files, and I always push people to actually print their favourites and put them somewhere you'll see them.",
+          "Photos hit differently a year, five years, ten years later. Every gallery comes with print-ready files, and we always push people to actually print their favourites and put them somewhere you'll see them.",
         ],
       },
     ],
@@ -116,7 +116,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       },
       {
         q: "What if my kids won't cooperate?",
-        a: "That's normal and totally fine. I keep things loose and work with the energy in the room instead of fighting it.",
+        a: "That's normal and totally fine. We keep things loose and work with the energy in the room instead of fighting it.",
       },
     ],
   },
@@ -128,12 +128,12 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       "Portrait and headshot photography in Saskatoon, in studio or on location. Sessions starting at $200.00.",
     h1: "Portrait photographer in Saskatoon",
     intro: [
-      "Portraits for you: personal photos, model and creative work, or a headshot for work, dating or socials. I direct as much or as little as you want.",
+      "Portraits for you: personal photos, model and creative work, or a headshot for work, dating or socials. We direct as much or as little as you want.",
       `Sessions are at ${STUDIO} or on location around Saskatoon.`,
     ],
     packageId: "portraits",
     bookType: "portraits",
-    photos: [PHOTOS.PHOTO_22, PHOTOS.PHOTO_25, PHOTOS.PHOTO_02, PHOTOS.PHOTO_23, PHOTOS.PHOTO_24, PHOTOS.PHOTO_15, PHOTOS.PHOTO_13, PHOTOS.PHOTO_10, PHOTOS.PHOTO_09],
+    photos: [PHOTOS.PHOTO_26, PHOTOS.PHOTO_38, PHOTOS.PHOTO_35, PHOTOS.PHOTO_39, PHOTOS.PHOTO_42, PHOTOS.PHOTO_22, PHOTOS.PHOTO_25, PHOTOS.PHOTO_02, PHOTOS.PHOTO_23, PHOTOS.PHOTO_24, PHOTOS.PHOTO_15, PHOTOS.PHOTO_13, PHOTOS.PHOTO_10, PHOTOS.PHOTO_09],
     sections: [
       {
         heading: "Studio portraits and headshots",
@@ -144,14 +144,14 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       {
         heading: "Creative and on-location",
         body: [
-          "If you have an idea, a concept, or a place that suits you, bring it. Outdoor and creative sessions are some of my favourite shoots.",
+          "If you have an idea, a concept, or a place that suits you, bring it. Outdoor and creative sessions are some of our favourite shoots.",
         ],
       },
     ],
     faqs: [
       {
         q: "How much does a portrait session cost?",
-        a: "Portrait sessions start at $200.00. A typical session includes around 15-20 edited, print-ready photos, and I'll confirm your quote once I know what you're after.",
+        a: "Portrait sessions start at $200.00. A typical session includes around 15-20 edited, print-ready photos, and we'll confirm your quote once we know what you're after.",
       },
       {
         q: "Do you do headshots?",
@@ -163,7 +163,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       },
       {
         q: "I'm awkward in front of the camera. Is that a problem?",
-        a: "Not at all. Most people say that. I'll give you simple direction and keep it relaxed.",
+        a: "Not at all. Most people say that. We'll give you simple direction and keep it relaxed.",
       },
     ],
   },
@@ -175,7 +175,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       "Nightclub, party and event photography in Saskatoon. Coverage starting at $275.00, sneak peeks in 24-48 hours.",
     h1: "Nightlife & event photographer in Saskatoon",
     intro: [
-      "Club nights, DJ sets, parties and events. I shoot the energy of the room: the crowd, the performers, and the candid moments in between.",
+      "Club nights, DJ sets, parties and events. We shoot the energy of the room: the crowd, the performers, and the candid moments in between.",
       "Fast sneak peeks so you can post while the night is still fresh, then the full gallery a few days later.",
     ],
     packageId: "nightlife",
@@ -185,14 +185,14 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       {
         heading: "For venues, promoters and hosts",
         body: [
-          "Coverage built for social media: wide crowd shots, performers on stage, and candid portraits of your guests. I work low-light and keep out of the way.",
+          "Coverage built for social media: wide crowd shots, performers on stage, and candid portraits of your guests. We work low-light and keep out of the way.",
         ],
       },
     ],
     faqs: [
       {
         q: "How much does nightlife or event coverage cost?",
-        a: "Nightlife coverage starts at $275.00, usually with around 50-70 edited photos of the night. Final pricing depends on the event length and venue, and I'll quote it when we book.",
+        a: "Nightlife coverage starts at $275.00, usually with around 50-70 edited photos of the night. Final pricing depends on the event length and venue, and we'll quote it when we book.",
       },
       {
         q: "How fast do we get photos?",
@@ -200,7 +200,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
       },
       {
         q: "Do you shoot private parties and other events?",
-        a: "Yes. Tell me about the event, date and venue and I'll put together a quote.",
+        a: "Yes. Tell us about the event, date and venue and we'll put together a quote.",
       },
     ],
   },
