@@ -15,8 +15,28 @@ export function PromoSection() {
         {PROMOS.map((promo) => (
           <article
             key={promo.id}
-            className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-16"
+            className="flex flex-col gap-8 md:flex-row md:items-center md:gap-16"
           >
+            {promo.poster ? (
+              <a
+                href={promo.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${promo.cta}: ${promo.title}`}
+                className="block w-full max-w-sm shrink-0 self-center md:self-auto"
+                onClick={() => trackEvent("book_click", { promo: promo.id, source: "poster" })}
+              >
+                <img
+                  src={promo.poster.src}
+                  alt={promo.poster.alt}
+                  width={promo.poster.width}
+                  height={promo.poster.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-auto w-full bg-white"
+                />
+              </a>
+            ) : null}
             <div className="max-w-xl">
               <p className="text-xs tracking-label text-muted uppercase">
                 {promo.label} · Studio B
@@ -35,18 +55,18 @@ export function PromoSection() {
                   <li key={line}>{line}</li>
                 ))}
               </ul>
-            </div>
-            <div className="shrink-0">
-              <Button asChild size="lg">
-                <a
-                  href={promo.bookingUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={() => trackEvent("book_click", { promo: promo.id })}
-                >
-                  {promo.cta}
-                </a>
-              </Button>
+              <div className="mt-8">
+                <Button asChild size="lg">
+                  <a
+                    href={promo.bookingUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => trackEvent("book_click", { promo: promo.id })}
+                  >
+                    {promo.cta}
+                  </a>
+                </Button>
+              </div>
             </div>
           </article>
         ))}

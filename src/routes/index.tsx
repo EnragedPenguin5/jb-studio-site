@@ -57,6 +57,8 @@ function Home() {
         </div>
       </section>
 
+      <PromoSection />
+
       <section className="pt-12 md:pt-16">
         <h2 className="sr-only">Selected work</h2>
         <PhotoCarousel photos={FEATURED} />
@@ -69,10 +71,6 @@ function Home() {
         >
           All work
         </Link>
-      </div>
-
-      <div className="pt-12 md:pt-16">
-        <PromoSection />
       </div>
 
       <section className="px-5 py-16 md:px-8 md:py-24">

@@ -118,6 +118,7 @@ export interface Promo {
   details: readonly string[];
   cta: string;
   bookingUrl: string;
+  poster?: { src: string; alt: string; width: number; height: number };
 }
 
 /**
@@ -135,6 +136,12 @@ export const PROMOS: readonly Promo[] = [
     details: ["3 edited photos", "20-minute session", "Book online, pay at the studio"],
     cta: "Book your slot",
     bookingUrl: BOOKING_URL,
+    poster: {
+      src: "/photos/headshot-sprint-poster.png",
+      alt: "Headshot Sprint poster: $49 plus PST for 3 edited photos in a 20-minute session at Studio B, in the basement of The Two Twenty, Saskatoon.",
+      width: 1224,
+      height: 1584,
+    },
   },
 ];
 
