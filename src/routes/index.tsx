@@ -38,20 +38,21 @@ const quietLink =
 function Home() {
   return (
     <main>
-      {/* Hero: on phones the portrait fills the screen; on wide screens it
-          takes the right half so it is never cropped to a letterbox. */}
-      <section className="relative min-h-svh bg-bg md:grid md:grid-cols-2">
-        <div className="absolute inset-x-0 top-16 bottom-0 md:relative md:top-0 md:order-2">
+      {/* Hero: on phones and tablets the photo fills the screen behind the
+          text. On wide screens it sits on the right at its full 4:5 shape,
+          sized to the window height, so it is never cropped. */}
+      <section className="relative min-h-svh bg-bg lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:pt-16">
+        <div className="absolute inset-x-0 top-16 bottom-0 lg:relative lg:top-0 lg:order-2 lg:aspect-[4/5] lg:h-[calc(100svh-4rem)] lg:max-w-[60vw]">
           <PhotoImage
             photo={HERO}
             priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="iris absolute inset-0 size-full object-cover object-[30%_0%] outline-0 md:object-[50%_20%]"
+            sizes="(max-width: 1024px) 100vw, 60vw"
+            className="iris absolute inset-0 size-full object-cover object-[30%_0%] outline-0 lg:object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/55 to-transparent md:hidden" />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/55 to-transparent lg:hidden" />
         </div>
-        <div className="relative z-10 flex min-h-svh flex-col justify-end px-5 pt-24 pb-10 md:order-1 md:justify-center md:px-8 md:pb-16">
-          <h1 className="font-display text-[17vw] md:text-[7.5vw]">
+        <div className="relative z-10 flex min-h-svh flex-col justify-end px-5 pt-24 pb-10 md:px-8 lg:order-1 lg:min-h-0 lg:justify-center lg:py-16">
+          <h1 className="font-display text-[17vw] md:text-[11vw] lg:text-[clamp(3.5rem,6.2vw,8rem)]">
             {HERO_COPY.headline}
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-fg/85">{HERO_COPY.sub}</p>

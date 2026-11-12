@@ -12,12 +12,14 @@ export function ServicePage({ page }: { page: ServicePageContent }) {
 
   return (
     <main className="pt-16">
-      <header className="grid md:min-h-[calc(100svh-4rem)] md:grid-cols-2">
+      {/* The lead photo keeps its 4:5 shape at every size: full width on
+          phones, window height on wide screens. */}
+      <header className="grid lg:grid-cols-[minmax(0,1fr)_auto]">
         <PhotoImage
           photo={lead}
           priority
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="aspect-portrait w-full object-cover outline-0 md:order-2 md:aspect-auto md:h-full"
+          sizes="(max-width: 1024px) 100vw, 60vw"
+          className="aspect-portrait w-full object-cover object-top outline-0 md:mx-auto md:max-w-2xl lg:order-2 lg:mx-0 lg:h-[calc(100svh-4rem)] lg:w-auto lg:max-w-[60vw]"
         />
         <div className="flex flex-col justify-center px-5 py-12 md:px-8 md:py-16">
           <h1 className="max-w-xl font-display text-5xl md:text-7xl">{page.h1}.</h1>

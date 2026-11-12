@@ -40,15 +40,15 @@ function Services() {
       {PACKAGES.map((item, i) => (
         <article
           key={item.id}
-          className="grid border-t border-fg/8 md:grid-cols-2 md:items-center"
+          className="grid border-t border-fg/8 md:grid-cols-12 md:items-center"
         >
           <PhotoImage
             photo={PACKAGE_PHOTO[item.id]}
             priority={i === 0}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className={`aspect-portrait w-full object-cover outline-0 md:aspect-auto md:h-[80svh] md:object-[50%_18%] ${i % 2 === 1 ? "md:order-2" : ""}`}
+            sizes="(max-width: 768px) 100vw, 42vw"
+            className={`aspect-portrait w-full object-cover outline-0 md:col-span-5 ${i % 2 === 1 ? "md:order-2 md:col-start-8" : ""}`}
           />
-          <div className="px-5 py-12 md:px-16 md:py-16">
+          <div className={`px-5 py-12 md:col-span-7 md:px-12 md:py-16 lg:px-20 ${i % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""}`}>
             <h2 className="font-display text-5xl md:text-7xl">{item.name}</h2>
             <p className="mt-5 text-lg text-fg">Starting at {item.startingPrice}</p>
             <p className="mt-1 text-base text-muted">Typical turnaround {item.turnaround}</p>
