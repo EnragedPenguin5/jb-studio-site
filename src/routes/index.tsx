@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PhotoCarousel } from "@/components/photo-carousel";
 import { PhotoImage } from "@/components/photo-image";
+import { PromoSection } from "@/components/promo-section";
 import { Button } from "@/components/ui/button";
 import { FEATURED, HERO } from "@/lib/photos";
 import { pageHead, SITE } from "@/lib/site";
@@ -68,6 +69,10 @@ function Home() {
         >
           All work
         </Link>
+      </div>
+
+      <div className="pt-12 md:pt-16">
+        <PromoSection />
       </div>
 
       <section className="px-5 py-16 md:px-8 md:py-24">

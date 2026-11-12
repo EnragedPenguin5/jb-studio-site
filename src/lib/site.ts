@@ -105,6 +105,39 @@ export const PACKAGES = [
   },
 ] as const;
 
+/** Square Appointments page. It always lists every bookable service. */
+export const BOOKING_URL =
+  "https://square.site/book/LX63D74K241VZ/jet-black-studio-saskatoon-sk";
+
+export interface Promo {
+  id: string;
+  label: string;
+  title: string;
+  blurb: string;
+  price: string;
+  details: readonly string[];
+  cta: string;
+  bookingUrl: string;
+}
+
+/**
+ * Current promos shown on the homepage. Add, edit or remove entries here;
+ * an empty list hides the section entirely.
+ */
+export const PROMOS: readonly Promo[] = [
+  {
+    id: "headshot-sprint",
+    label: "Now booking",
+    title: "Headshot Sprint",
+    blurb:
+      "A quick headshot session in the studio. Come on down to Studio B, in the basement of The Two Twenty.",
+    price: "$49 + PST",
+    details: ["3 edited photos", "20-minute session", "Book online, pay at the studio"],
+    cta: "Book your slot",
+    bookingUrl: BOOKING_URL,
+  },
+];
+
 export function pageHead(title: string, description: string, path = "/") {
   return {
     meta: [
