@@ -158,7 +158,11 @@ function GallerySection({
             ) : null}
             <div className="mt-6 flex flex-wrap items-center gap-5">
               <Button asChild variant="outline">
-                <Link to="/contact" search={{ type: copy.bookType }}>
+                <Link
+                  to="/contact"
+                  search={{ type: copy.bookType }}
+                  hash={pkg && copy.bookType !== "nightlife" ? undefined : "request"}
+                >
                   {pkg ? "Book this" : "Book a shoot"}
                 </Link>
               </Button>

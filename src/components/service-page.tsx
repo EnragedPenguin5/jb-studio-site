@@ -31,7 +31,11 @@ export function ServicePage({ page }: { page: ServicePageContent }) {
           <p className="mt-6 text-lg text-fg">From {pkg.startingPrice}</p>
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
             <Button asChild size="lg">
-              <Link to="/contact" search={{ type: page.bookType }}>
+              <Link
+                to="/contact"
+                search={{ type: page.bookType }}
+                hash={page.bookType === "nightlife" ? "request" : undefined}
+              >
                 Book a session
               </Link>
             </Button>
@@ -87,7 +91,11 @@ export function ServicePage({ page }: { page: ServicePageContent }) {
             ))}
           </ul>
           <Button asChild size="lg" className="mt-8 w-full">
-            <Link to="/contact" search={{ type: page.bookType }}>
+            <Link
+                to="/contact"
+                search={{ type: page.bookType }}
+                hash={page.bookType === "nightlife" ? "request" : undefined}
+              >
               Book a session
             </Link>
           </Button>

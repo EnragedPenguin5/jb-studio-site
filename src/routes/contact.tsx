@@ -4,7 +4,14 @@ import { ContactForm } from "@/components/contact-form";
 import { PhotoImage } from "@/components/photo-image";
 import { Button } from "@/components/ui/button";
 import { PHOTOS } from "@/lib/photos";
-import { BOOKING_OPTIONS, BOOKING_URL, DEPOSIT_NOTE, pageHead, SITE } from "@/lib/site";
+import {
+  BOOKING_OPTIONS,
+  BOOKING_URL,
+  DEPOSIT_NOTE,
+  pageHead,
+  SITE,
+  squareServiceUrl,
+} from "@/lib/site";
 
 type ContactSearch = {
   type?: string;
@@ -17,7 +24,7 @@ export const Route = createFileRoute("/contact")({
   head: () =>
     pageHead(
       `Book a shoot - ${SITE.name}`,
-      "Book a headshot, portrait, family, maternity, editorial or nightlife shoot with Jet Black Studio in Saskatoon. Pick a session and book online, or send a request.",
+      "Book a headshot, portrait, family, maternity, editorial or nightlife shoot with Jet Black Studio in Saskatoon. Pick a session and book online, send a request, or ask about pay-what-you-can sessions.",
       "/contact",
     ),
   component: Contact,
@@ -64,7 +71,11 @@ function Contact() {
                 {option.square ? (
                   <Button asChild>
                     <a
-                      href={BOOKING_URL}
+                      href={
+                        option.squareServiceId
+                          ? squareServiceUrl(option.squareServiceId)
+                          : BOOKING_URL
+                      }
                       target="_blank"
                       rel="noreferrer"
                       onClick={() =>
@@ -95,6 +106,37 @@ function Contact() {
           </li>
         ))}
       </ul>
+
+      {/* Pay what you can: no examples on purpose, and it stays a request. */}
+      <section
+        aria-labelledby="donation-heading"
+        className="grid gap-6 border-b border-fg/8 bg-surface px-5 py-12 md:grid-cols-12 md:items-center md:gap-10 md:px-8 md:py-16"
+      >
+        <div className="md:col-span-8">
+          <h2 id="donation-heading" className="font-display text-4xl md:text-5xl">
+            Pay what you can.
+          </h2>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
+            Every month we set aside a few studio hours for people in special circumstances, so
+            photos aren’t out of reach for anyone in our community. You pay by donation:
+            whatever you’re able to. Spots are limited, and we reply to everyone.
+          </p>
+        </div>
+        <div className="md:col-span-4 md:justify-self-end">
+          <Button asChild variant="outline">
+            <Link
+              to="/contact"
+              search={{ type: "donation" }}
+              hash="request"
+              onClick={() =>
+                trackEvent("request_click", { option: "donation", source: "book_page" })
+              }
+            >
+              Request a spot
+            </Link>
+          </Button>
+        </div>
+      </section>
 
       <section
         id="request"

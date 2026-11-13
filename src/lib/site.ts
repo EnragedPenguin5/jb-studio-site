@@ -167,6 +167,8 @@ export const BOOKING_URL =
  *                     Square, or people land on a page without it.
  *  - square: false -> the button fills in the request form further down.
  *
+ * `squareServiceId` is the service's item id in Square; leave it "" to send
+ * people to the full Square list instead.
  * `deposit: true` shows the deposit line (DEPOSIT_NOTE) under that option.
  * `examples` are photo ids from src/lib/photos.ts. `formType` is the shoot
  * type the request form gets pre-filled with (see SHOOT_TYPES).
@@ -183,6 +185,7 @@ export const BOOKING_OPTIONS = [
     blurb: "Twenty minutes in the studio, three edited photos. In, out, and looking sharp.",
     examples: ["PHOTO_25", "PHOTO_26", "PHOTO_38"],
     square: true,
+    squareServiceId: "3KU3K5VE4G3ODBAV3GKQS5QG",
     deposit: false,
     formType: "portraits",
   },
@@ -193,6 +196,7 @@ export const BOOKING_OPTIONS = [
     blurb: "A full directed session, in the studio or on location. Clean and classic, or as far from it as you like.",
     examples: ["PHOTO_35", "PHOTO_34", "PHOTO_22"],
     square: true,
+    squareServiceId: "TWKVMMFREDXEQ44HQ4CBPLHU",
     deposit: true,
     formType: "portraits",
   },
@@ -203,6 +207,7 @@ export const BOOKING_OPTIONS = [
     blurb: "Groups, couples, kids and pets. Relaxed enough that everyone still looks like themselves.",
     examples: ["PHOTO_05", "PHOTO_17", "PHOTO_12"],
     square: true,
+    squareServiceId: "GNWA4ZLSK2VUJ2L46SXFNVF3",
     deposit: true,
     formType: "family",
   },
@@ -213,6 +218,7 @@ export const BOOKING_OPTIONS = [
     blurb: "Calm, unhurried sessions in the studio or outdoors. Partners, kids and pets welcome.",
     examples: ["PHOTO_07", "PHOTO_21", "PHOTO_18"],
     square: true,
+    squareServiceId: "DZS676NGDMCZRUP5HOYDYARM",
     deposit: true,
     formType: "family",
   },
@@ -223,6 +229,7 @@ export const BOOKING_OPTIONS = [
     blurb: "A concept shoot built around an idea, a wardrobe and a location. Tell us the vision and we'll price it.",
     examples: ["PHOTO_42", "PHOTO_39", "PHOTO_43"],
     square: false,
+    squareServiceId: "",
     deposit: false,
     formType: "other",
   },
@@ -233,10 +240,20 @@ export const BOOKING_OPTIONS = [
     blurb: "Club nights, DJ sets, parties and events. Tell us the date and venue and we'll confirm.",
     examples: ["PHOTO_08", "PHOTO_01", "PHOTO_14"],
     square: false,
+    squareServiceId: "",
     deposit: false,
     formType: "nightlife",
   },
 ] as const;
+
+/**
+ * Square link that opens one specific service, so "Pick a time" lands on the
+ * session the person chose and not the full list. The id is the service's
+ * item id in Square.
+ */
+export function squareServiceUrl(serviceId: string) {
+  return `https://book.squareup.com/appointments/khq4nd1duf9n5g/location/LX63D74K241VZ/services/${serviceId}`;
+}
 
 export interface Promo {
   id: string;
@@ -264,7 +281,7 @@ export const PROMOS: readonly Promo[] = [
     price: "$49 + PST",
     details: ["3 edited photos", "20-minute session", "Book online, pay at the studio"],
     cta: "Book your slot",
-    bookingUrl: BOOKING_URL,
+    bookingUrl: squareServiceUrl("3KU3K5VE4G3ODBAV3GKQS5QG"),
     poster: {
       src: "/photos/headshot-sprint-poster.png",
       alt: "Headshot Sprint poster: $49 plus PST for 3 edited photos in a 20-minute session at Studio B, in the basement of The Two Twenty, Saskatoon.",

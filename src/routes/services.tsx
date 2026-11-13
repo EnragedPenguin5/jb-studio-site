@@ -61,7 +61,11 @@ function Services() {
             </ul>
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
               <Button asChild>
-                <Link to="/contact" search={{ type: item.id }}>
+                <Link
+                  to="/contact"
+                  search={{ type: item.id }}
+                  hash={item.id === "nightlife" ? "request" : undefined}
+                >
                   Book this
                 </Link>
               </Button>
@@ -97,7 +101,7 @@ function Services() {
           </div>
           <div className="mt-10">
             <Button asChild variant="outline">
-              <Link to="/contact" search={{ type: "donation" }}>
+              <Link to="/contact" search={{ type: "donation" }} hash="request">
                 Request a spot
               </Link>
             </Button>
@@ -122,7 +126,7 @@ function Services() {
           </div>
           <div className="mt-10">
             <Button asChild variant="outline">
-              <Link to="/contact" search={{ type: "studio" }}>
+              <Link to="/contact" search={{ type: "studio" }} hash="request">
                 Ask about studio time
               </Link>
             </Button>
