@@ -167,9 +167,14 @@ export const BOOKING_URL =
  *                     Square, or people land on a page without it.
  *  - square: false -> the button fills in the request form further down.
  *
+ * `deposit: true` shows the deposit line (DEPOSIT_NOTE) under that option.
  * `examples` are photo ids from src/lib/photos.ts. `formType` is the shoot
  * type the request form gets pre-filled with (see SHOOT_TYPES).
  */
+/** Shown under every option that takes a deposit. Keep it matching Square. */
+export const DEPOSIT_NOTE =
+  "A $50 deposit holds your spot and comes off your total. It's non-refundable if you cancel.";
+
 export const BOOKING_OPTIONS = [
   {
     id: "headshot-sprint",
@@ -178,6 +183,7 @@ export const BOOKING_OPTIONS = [
     blurb: "Twenty minutes in the studio, three edited photos. In, out, and looking sharp.",
     examples: ["PHOTO_25", "PHOTO_26", "PHOTO_38"],
     square: true,
+    deposit: false,
     formType: "portraits",
   },
   {
@@ -187,6 +193,7 @@ export const BOOKING_OPTIONS = [
     blurb: "A full directed session, in the studio or on location. Clean and classic, or as far from it as you like.",
     examples: ["PHOTO_35", "PHOTO_34", "PHOTO_22"],
     square: true,
+    deposit: true,
     formType: "portraits",
   },
   {
@@ -196,6 +203,7 @@ export const BOOKING_OPTIONS = [
     blurb: "Groups, couples, kids and pets. Relaxed enough that everyone still looks like themselves.",
     examples: ["PHOTO_05", "PHOTO_17", "PHOTO_12"],
     square: true,
+    deposit: true,
     formType: "family",
   },
   {
@@ -205,6 +213,7 @@ export const BOOKING_OPTIONS = [
     blurb: "Calm, unhurried sessions in the studio or outdoors. Partners, kids and pets welcome.",
     examples: ["PHOTO_07", "PHOTO_21", "PHOTO_18"],
     square: true,
+    deposit: true,
     formType: "family",
   },
   {
@@ -214,6 +223,7 @@ export const BOOKING_OPTIONS = [
     blurb: "A concept shoot built around an idea, a wardrobe and a location. Tell us the vision and we'll price it.",
     examples: ["PHOTO_42", "PHOTO_39", "PHOTO_43"],
     square: false,
+    deposit: false,
     formType: "other",
   },
   {
@@ -223,6 +233,7 @@ export const BOOKING_OPTIONS = [
     blurb: "Club nights, DJ sets, parties and events. Tell us the date and venue and we'll confirm.",
     examples: ["PHOTO_08", "PHOTO_01", "PHOTO_14"],
     square: false,
+    deposit: false,
     formType: "nightlife",
   },
 ] as const;

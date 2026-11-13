@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 import { PhotoImage } from "@/components/photo-image";
 import { Button } from "@/components/ui/button";
 import { PHOTOS } from "@/lib/photos";
-import { BOOKING_OPTIONS, BOOKING_URL, pageHead, SITE } from "@/lib/site";
+import { BOOKING_OPTIONS, BOOKING_URL, DEPOSIT_NOTE, pageHead, SITE } from "@/lib/site";
 
 type ContactSearch = {
   type?: string;
@@ -57,6 +57,9 @@ function Contact() {
               <h2 className="font-display text-4xl md:text-5xl">{option.name}</h2>
               <p className="mt-3 text-lg text-fg">{option.price}</p>
               <p className="mt-3 max-w-md text-base leading-relaxed text-muted">{option.blurb}</p>
+              {option.deposit ? (
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">{DEPOSIT_NOTE}</p>
+              ) : null}
               <div className="mt-auto pt-8">
                 {option.square ? (
                   <Button asChild>
