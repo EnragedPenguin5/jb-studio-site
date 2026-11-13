@@ -28,7 +28,7 @@ export function ServicePage({ page }: { page: ServicePageContent }) {
               <p key={p}>{p}</p>
             ))}
           </div>
-          <p className="mt-6 text-lg text-fg">Starting at {pkg.startingPrice}</p>
+          <p className="mt-6 text-lg text-fg">From {pkg.startingPrice}</p>
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
             <Button asChild size="lg">
               <Link to="/contact" search={{ type: page.bookType }}>
@@ -76,7 +76,7 @@ export function ServicePage({ page }: { page: ServicePageContent }) {
 
         <aside className="h-fit border-t border-fg/15 pt-8 md:sticky md:top-28 md:col-span-4 md:col-start-9">
           <h2 className="font-display text-4xl">{page.label} session.</h2>
-          <p className="mt-4 text-lg text-fg">Starting at {pkg.startingPrice}</p>
+          <p className="mt-4 text-lg text-fg">From {pkg.startingPrice}</p>
           <p className="mt-1 text-sm text-muted">Final quote confirmed when we book.</p>
           <p className="mt-1 text-base text-muted">Turnaround: {pkg.turnaround}</p>
           <ul className="mt-6 border-t border-fg/15 text-base text-fg/85">

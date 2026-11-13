@@ -9,7 +9,7 @@ export const Route = createFileRoute("/services")({
   head: () =>
     pageHead(
       `Services - ${SITE.name}`,
-      "Jet Black Studio pricing: portraits from $200.00, family sessions from $250.00, nightlife coverage from $275.00, plus by-donation sessions and hosted studio time in Riversdale, Saskatoon.",
+      "Jet Black Studio pricing: portraits from $200, family sessions from $250, nightlife coverage from $275, plus by-donation sessions and hosted studio time in Riversdale, Saskatoon.",
       "/services",
     ),
   component: Services,
@@ -50,7 +50,7 @@ function Services() {
           />
           <div className={`px-5 py-12 md:col-span-7 md:px-12 md:py-16 lg:px-20 ${i % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""}`}>
             <h2 className="font-display text-5xl md:text-7xl">{item.name}</h2>
-            <p className="mt-5 text-lg text-fg">Starting at {item.startingPrice}</p>
+            <p className="mt-5 text-lg text-fg">From {item.startingPrice}</p>
             <p className="mt-1 text-base text-muted">Typical turnaround {item.turnaround}</p>
             <ul className="mt-8 max-w-md border-t border-fg/15 text-base text-fg/85">
               {item.includes.map((line) => (

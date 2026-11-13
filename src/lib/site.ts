@@ -123,7 +123,7 @@ export const PACKAGES = [
   {
     id: "portraits",
     name: "Portraits",
-    startingPrice: "$200.00",
+    startingPrice: "$200",
     turnaround: "7-10 business days",
     includes: [
       "Directed session, studio or on location",
@@ -134,7 +134,7 @@ export const PACKAGES = [
   {
     id: "family",
     name: "Family",
-    startingPrice: "$250.00",
+    startingPrice: "$250",
     turnaround: "10-14 business days",
     includes: [
       "Groups, couples, or maternity on location",
@@ -145,7 +145,7 @@ export const PACKAGES = [
   {
     id: "nightlife",
     name: "Nightlife",
-    startingPrice: "$275.00",
+    startingPrice: "$275",
     turnaround: "Sneak peek in 24-48 hrs, full gallery in 3-5 business days",
     includes: [
       "Coverage of the night: candid and portraits",
@@ -158,6 +158,74 @@ export const PACKAGES = [
 /** Square Appointments page. It always lists every bookable service. */
 export const BOOKING_URL =
   "https://square.site/book/LX63D74K241VZ/jet-black-studio-saskatoon-sk";
+
+/**
+ * The options on the Book page. Each one shows three example photos.
+ *
+ *  - square: true  -> the button goes straight to Square Appointments.
+ *                     Only turn this on once the matching service exists in
+ *                     Square, or people land on a page without it.
+ *  - square: false -> the button fills in the request form further down.
+ *
+ * `examples` are photo ids from src/lib/photos.ts. `formType` is the shoot
+ * type the request form gets pre-filled with (see SHOOT_TYPES).
+ */
+export const BOOKING_OPTIONS = [
+  {
+    id: "headshot-sprint",
+    name: "Headshot Sprint",
+    price: "$49 + PST",
+    blurb: "Twenty minutes in the studio, three edited photos. In, out, and looking sharp.",
+    examples: ["PHOTO_25", "PHOTO_26", "PHOTO_38"],
+    square: true,
+    formType: "portraits",
+  },
+  {
+    id: "portraits",
+    name: "Portraits",
+    price: "From $200",
+    blurb: "A full directed session, in the studio or on location. Clean and classic, or as far from it as you like.",
+    examples: ["PHOTO_35", "PHOTO_34", "PHOTO_22"],
+    square: true,
+    formType: "portraits",
+  },
+  {
+    id: "family",
+    name: "Family",
+    price: "From $250",
+    blurb: "Groups, couples, kids and pets. Relaxed enough that everyone still looks like themselves.",
+    examples: ["PHOTO_05", "PHOTO_17", "PHOTO_12"],
+    square: true,
+    formType: "family",
+  },
+  {
+    id: "maternity",
+    name: "Maternity",
+    price: "From $250",
+    blurb: "Calm, unhurried sessions in the studio or outdoors. Partners, kids and pets welcome.",
+    examples: ["PHOTO_07", "PHOTO_21", "PHOTO_18"],
+    square: true,
+    formType: "family",
+  },
+  {
+    id: "editorial",
+    name: "Editorial",
+    price: "Quoted per concept",
+    blurb: "A concept shoot built around an idea, a wardrobe and a location. Tell us the vision and we'll price it.",
+    examples: ["PHOTO_42", "PHOTO_39", "PHOTO_43"],
+    square: false,
+    formType: "other",
+  },
+  {
+    id: "nightlife",
+    name: "Nightlife and events",
+    price: "From $275",
+    blurb: "Club nights, DJ sets, parties and events. Tell us the date and venue and we'll confirm.",
+    examples: ["PHOTO_08", "PHOTO_01", "PHOTO_14"],
+    square: false,
+    formType: "nightlife",
+  },
+] as const;
 
 export interface Promo {
   id: string;

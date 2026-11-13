@@ -152,7 +152,7 @@ function GallerySection({
             <p className="mt-4 max-w-sm text-base leading-relaxed text-muted">{copy.blurb}</p>
             {pkg ? (
               <p className="mt-6 text-sm text-fg">
-                Starting at {pkg.startingPrice}
+                From {pkg.startingPrice}
                 <span className="text-muted">, {photos.length} frames on this sheet</span>
               </p>
             ) : null}
